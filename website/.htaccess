@@ -1,0 +1,56 @@
+# Apache equivalent of _redirects (use whichever your host supports).
+# 301 migration map + sensible static-hosting defaults.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Services — single consistent path
+  RewriteRule ^in-home-nursing-care-services/?$            /services/ [R=301,L]
+  RewriteRule ^in-home-nursing-care-services/personal-care/?$ /services/personal-care.html [R=301,L]
+  RewriteRule ^in-home-nursing-care-services/nursing-care/?$  /services/nursing-care.html [R=301,L]
+  RewriteRule ^in-home-nursing-care-services/social-care/?$   /services/social-care.html [R=301,L]
+  RewriteRule ^in-home-nursing-care-services/foot-care/?$     /services/ [R=301,L]
+  RewriteRule ^dementia-care/?$                            /services/dementia-care.html [R=301,L]
+
+  # Broken legacy path (was 404, linked from home & about)
+  RewriteRule ^home-care-services/?$                       /services/ [R=301,L]
+  RewriteRule ^home-care-services/personal-care/?$         /services/personal-care.html [R=301,L]
+
+  # Content & conversion
+  RewriteRule ^about-us/?$                                 /about.html [R=301,L]
+  RewriteRule ^contact-us/?$                               /contact.html [R=301,L]
+  RewriteRule ^book-an-appointment/?$                      /book.html [R=301,L]
+  RewriteRule ^in-home-nursing-care-benefits/?$            /resources/benefits.html [R=301,L]
+
+  # Area served — consolidated
+  RewriteRule ^area-served/?$                              /resources/area-served.html [R=301,L]
+  RewriteRule ^area-served/.*$                             /resources/area-served.html [R=301,L]
+
+  # Recruitment
+  RewriteRule ^disc-personal-profile-system/?$             /careers.html [R=301,L]
+  RewriteRule ^interview-form/?$                           /careers.html [R=301,L]
+
+  # Staff & legal
+  RewriteRule ^login/?$                                    /staff/ [R=301,L]
+  RewriteRule ^password-reset/?$                           /staff/ [R=301,L]
+  RewriteRule ^privacy-policy/?$                           /legal/privacy.html [R=301,L]
+  RewriteRule ^terms-conditions/?$                         /legal/terms.html [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+# Caching for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+</IfModule>

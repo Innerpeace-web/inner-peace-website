@@ -1,0 +1,180 @@
+{
+  "id": "019ed003-b59f-742e-8c2b-c0d432bde539",
+  "links": [
+    {
+      "url": "https://innerpeace.vision/sitemap_index.xml"
+    },
+    {
+      "url": "https://innerpeace.vision/page-sitemap.xml"
+    },
+    {
+      "url": "https://innerpeace.vision",
+      "title": "Inner Peace In-Home Nursing & Care",
+      "description": "At Inner Peace In-Home Nursing & Care, we are committed to providing high-quality, personalised care that promotes well-being and health. Learn more Book Now"
+    },
+    {
+      "url": "https://innerpeace.vision/book-an-appointment",
+      "title": "Book an Appointment - Inner Peace In-Home Nursing & Care",
+      "description": "Let's get you set up with a convenient time by booking an appointment that fits your agenda. By appointment only Contact Us Admin@innerpeace.vision 0419-853-811"
+    },
+    {
+      "url": "https://innerpeace.vision/terms-conditions"
+    },
+    {
+      "url": "https://innerpeace.vision/area-served"
+    },
+    {
+      "url": "https://innerpeace.vision/about-us",
+      "title": "About us - Inner Peace In-Home Nursing & Care",
+      "description": "At Inner Peace In-Home Nursing & Care, we are committed to providing high-quality, personalised care that promotes well-being and health."
+    },
+    {
+      "url": "https://innerpeace.vision/in-home-nursing-care-benefits",
+      "title": "In-Home Nursing & Care Benefits",
+      "description": "In-Home Nursing & Care offers numerous benefits, especially for individuals who require assistance with daily activities due to age, illness, or disability."
+    },
+    {
+      "url": "https://innerpeace.vision/in-home-nursing-care-services/foot-care"
+    },
+    {
+      "url": "https://innerpeace.vision/contact-us",
+      "title": "Contact Us - Inner Peace In-Home Nursing & Care",
+      "description": "Contact Us. Have questions, suggestions, or just want to say hello? We'd love to hear from you! Our team is here to assist you in any way we can."
+    },
+    {
+      "url": "https://innerpeace.vision/dementia-care",
+      "title": "Dementia Care - Inner Peace In-Home Nursing & Care",
+      "description": "Compassionate, personalised support for people living with dementia, their families, carers, and care providers across East Gippsland."
+    },
+    {
+      "url": "https://innerpeace.vision/in-home-nursing-care-services",
+      "title": "In-Home Nursing & Care Services",
+      "description": "Welcome to our In-Home Nursing & Care Services, where we provide personalised care, in comfort of home. personalized in-home support and social activities"
+    },
+    {
+      "url": "https://innerpeace.vision/in-home-nursing-care-services/nursing-care",
+      "title": "Inner Peace In-Home Nursing & Care",
+      "description": "At Inner Peace In-Home Nursing & Care, we believe in providing not only expert medical care but also compassionate and personalised attention to address your ..."
+    },
+    {
+      "url": "https://innerpeace.vision/in-home-nursing-care-services/personal-care",
+      "title": "Personal Care - Inner Peace In-Home Nursing & Care",
+      "description": "From hygiene assistance to food preparation, our caregivers are trained to offer compassionate and respectful support with your activities of daily living."
+    },
+    {
+      "url": "https://innerpeace.vision/in-home-nursing-care-services/social-care",
+      "title": "Social Care - Inner Peace In-Home Nursing & Care",
+      "description": "Social Care offers personalized in-home support and social activities tailored to bring joy and excitement into your life."
+    },
+    {
+      "url": "https://innerpeace.vision/area-served/inner-peace-in-home-nursing-care-in-bairnsdale",
+      "title": "Inner Peace In-Home Nursing & Care in Bairnsdale",
+      "description": "Inner Peace is your foremost choice for unparalleled and compassionate In-Home Nursing & Care in Bairnsdale."
+    },
+    {
+      "url": "https://innerpeace.vision/area-served/inner-peace-in-home-nursing-care-in-bruthen",
+      "title": "Inner Peace In-Home Nursing & Care in Bruthen",
+      "description": "Inner Peace is your foremost choice for unparalleled and compassionate In-Home Nursing & Care in Bruthen."
+    },
+    {
+      "url": "https://innerpeace.vision/area-served/inner-peace-in-home-nursing-care-in-east-gippsland",
+      "title": "Inner Peace In-Home Nursing & Care in East Gippsland",
+      "description": "Offering personalized in-home support and social activities tailored to bring joy and excitement into your life. Learn More ..."
+    },
+    {
+      "url": "https://innerpeace.vision/area-served/inner-peace-in-home-nursing-care-in-lakes-entrance",
+      "title": "Inner Peace In-Home Nursing & Care in Lakes Entrance",
+      "description": "Offering personalized in-home support and social activities tailored to bring joy and excitement into your life. Learn More ..."
+    },
+    {
+      "url": "https://innerpeace.vision/area-served/inner-peace-in-home-nursing-care-in-lindenow-south"
+    },
+    {
+      "url": "https://innerpeace.vision/area-served/inner-peace-in-home-nursing-care-in-paynesville"
+    },
+    {
+      "url": "https://innerpeace.vision/privacy-policy"
+    }
+  ],
+  "startedAt": "2026-06-16T10:39:23.922Z",
+  "endedAt": "2026-06-16T10:39:26.274Z",
+  "endpoint": "map",
+  "formState": {
+    "parseFile": null,
+    "parseFileMeta": null,
+    "extractSetupCompleted": false,
+    "urls": [],
+    "extractSchema": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "company_mission": {
+          "type": "string"
+        },
+        "supports_sso": {
+          "type": "boolean"
+        },
+        "is_open_source": {
+          "type": "boolean"
+        },
+        "is_in_yc": {
+          "type": "boolean"
+        }
+      }
+    },
+    "extractPrompt": "Extract the company details, following the schema.",
+    "enableWebSearch": false,
+    "constrainUrls": false,
+    "options": {
+      "onlyMainContent": true,
+      "parsePDF": true,
+      "stealthMode": false,
+      "excludeTags": [],
+      "includeTags": [],
+      "waitFor": "",
+      "timeout": "",
+      "maxAge": "2 days",
+      "ignoreSitemap": false,
+      "crawlEntireDomain": false,
+      "sitemap": "include",
+      "limit": "5000",
+      "maxDepth": "",
+      "excludePaths": [],
+      "includePaths": [],
+      "includeSubdomains": false,
+      "search": "",
+      "scrapeContentFromSearchResults": true,
+      "timeBasedSearch": "",
+      "location": "",
+      "prompt": ""
+    },
+    "formats": [
+      "markdown"
+    ],
+    "sources": [
+      "web"
+    ],
+    "categories": [],
+    "jsonSchema": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "company_name": {
+          "type": "string"
+        },
+        "company_description": {
+          "type": "string"
+        }
+      }
+    },
+    "jsonPrompt": "",
+    "questionPrompt": "",
+    "agent": {},
+    "url": "innerpeace.vision/",
+    "endpoint": "map"
+  },
+  "status": "success",
+  "version": "OFp8QYhrnXGCc1vlOeLOD",
+  "isPreview": false,
+  "data": []
+}

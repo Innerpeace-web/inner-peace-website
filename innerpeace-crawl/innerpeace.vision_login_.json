@@ -1,0 +1,43 @@
+{
+  "markdown": "[Skip to content](https://innerpeace.vision/login/#main)\n\nTeam Login Form\n\nUsername or E-mail\n\nPassword\n\nOnly fill in if you are not human\n\nKeep me signed in\n\n[Forgot your password?](https://innerpeace.vision/password-reset/)\n\n[Scroll to the top of the page](https://innerpeace.vision/login/#)\n\nreCAPTCHA\n\nRecaptcha requires verification.\n\nprotected by **reCAPTCHA**",
+  "metadata": {
+    "ogDescription": "Team Login Form",
+    "og:locale": "en_US",
+    "language": "en-AU",
+    "ogUrl": "https://innerpeace.vision/login/",
+    "og:url": "https://innerpeace.vision/login/",
+    "ogSiteName": "Inner Peace In-Home Nursing & Care",
+    "og:site_name": "Inner Peace In-Home Nursing & Care",
+    "og:type": "article",
+    "modifiedTime": "2023-11-30T04:41:59+00:00",
+    "generator": [
+      "WordPress 7.0",
+      "Elementor 4.0.8; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap"
+    ],
+    "article:modified_time": "2023-11-30T04:41:59+00:00",
+    "og:description": "Team Login Form",
+    "ogLocale": "en_US",
+    "twitter:data1": "1 minute",
+    "robots": "noindex, follow",
+    "twitter:label1": "Est. reading time",
+    "article:publisher": "https://www.facebook.com/innerpeace.vision",
+    "og:title": "Login - Inner Peace In-Home Nursing & Care",
+    "viewport": "width=device-width, initial-scale=1",
+    "msapplication-TileImage": "https://innerpeace.vision/wp-content/uploads/2023/12/cropped-Logo-270x270.png",
+    "twitter:card": "summary_large_image",
+    "title": "Login - Inner Peace In-Home Nursing & Care",
+    "ogTitle": "Login - Inner Peace In-Home Nursing & Care",
+    "favicon": "https://innerpeace.vision/wp-content/uploads/2023/12/cropped-Logo-32x32.png",
+    "scrapeId": "019ed004-49c3-77f4-83c1-9e78fe205d00",
+    "sourceURL": "https://innerpeace.vision/login/",
+    "url": "https://innerpeace.vision/login/",
+    "statusCode": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "timezone": "America/New_York",
+    "proxyUsed": "basic",
+    "cacheState": "miss",
+    "indexId": "37074c82-9497-46d7-9174-a226ab2ab221",
+    "creditsUsed": 1
+  },
+  "warning": "This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan."
+}
