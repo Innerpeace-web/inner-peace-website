@@ -1,0 +1,40 @@
+# Netlify-style 301 redirect map — migrates old WordPress URLs to the new
+# framework-aligned static structure. Preserves SEO equity; fixes the
+# broken /home-care-services/ links and the off-pattern /dementia-care/ URL.
+
+# --- Services: single consistent path ---
+/in-home-nursing-care-services            /services/                       301
+/in-home-nursing-care-services/personal-care   /services/personal-care.html   301
+/in-home-nursing-care-services/nursing-care    /services/nursing-care.html    301
+/in-home-nursing-care-services/social-care     /services/social-care.html     301
+/in-home-nursing-care-services/foot-care       /services/                     301
+/dementia-care                            /services/dementia-care.html     301
+
+# --- Broken legacy path referenced on home & about-us (was a 404) ---
+/home-care-services                       /services/                       301
+/home-care-services/personal-care         /services/personal-care.html     301
+
+# --- Content & conversion pages ---
+/about-us                                 /about.html                      301
+/contact-us                               /contact.html                    301
+/book-an-appointment                      /book.html                       301
+/in-home-nursing-care-benefits            /resources/benefits.html         301
+
+# --- Area served: consolidated to fix duplicate content ---
+/area-served                              /resources/area-served.html      301
+/area-served/inner-peace-in-home-nursing-care-in-bairnsdale      /resources/area-served.html   301
+/area-served/inner-peace-in-home-nursing-care-in-bruthen         /resources/area-served.html   301
+/area-served/inner-peace-in-home-nursing-care-in-east-gippsland  /resources/area-served.html   301
+/area-served/inner-peace-in-home-nursing-care-in-lakes-entrance  /resources/area-served.html   301
+/area-served/inner-peace-in-home-nursing-care-in-lindenow-south  /resources/area-served.html   301
+/area-served/inner-peace-in-home-nursing-care-in-paynesville     /resources/area-served.html   301
+
+# --- Recruitment forms: surfaced under Careers ---
+/disc-personal-profile-system             /careers.html                    301
+/interview-form                           /careers.html                    301
+
+# --- Staff area & legal ---
+/login                                    /staff/                          301
+/password-reset                           /staff/                          301
+/privacy-policy                           /legal/privacy.html              301
+/terms-conditions                         /legal/terms.html                301

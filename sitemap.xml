@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Clean, framework-aligned sitemap. Services consolidated under /services/;
+     area pages consolidated under /resources/area-served/; staff portal & legal excluded. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://innerpeace.vision/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://innerpeace.vision/about.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://innerpeace.vision/services/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://innerpeace.vision/services/personal-care.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://innerpeace.vision/services/nursing-care.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://innerpeace.vision/services/social-care.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://innerpeace.vision/services/dementia-care.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://innerpeace.vision/testimonials.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://innerpeace.vision/trust.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://innerpeace.vision/resources/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://innerpeace.vision/resources/area-served.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://innerpeace.vision/resources/benefits.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://innerpeace.vision/careers.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://innerpeace.vision/book.html</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://innerpeace.vision/contact.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+</urlset>
