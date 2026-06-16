@@ -1,0 +1,204 @@
+/* ==========================================================================
+   Inner Peace — Staff App Shell CSS
+   Specific to the isolated staff dashboard application layout.
+   ========================================================================== */
+
+body.app-body {
+  background: #eff3f2;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  width: 100%;
+  max-width: 1300px;
+  height: 85vh;
+  min-height: 700px;
+  background: #fafcfb;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+/* Sidebar */
+.app-sidebar {
+  background: var(--deep-teal, #1c3c3a);
+  color: #fff;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 0.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.app-brand-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--sage, #a7c4a0);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.app-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.app-nav a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.app-nav a svg {
+  opacity: 0.8;
+}
+
+.app-nav a:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.app-nav a.active {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-weight: 600;
+}
+
+.app-nav a.active svg {
+  opacity: 1;
+}
+
+/* Workspace */
+.app-workspace {
+  background: #fafcfb;
+  padding: 3.5rem 4rem;
+  overflow-y: auto;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.app-header h1 {
+  font-family: var(--font-head);
+  color: var(--deep-teal);
+  font-size: var(--fs-700);
+  margin: 0;
+}
+
+.app-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.app-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #5a8ab8;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+}
+
+/* Dashboard Grid */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.app-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+}
+
+.app-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.icon-teal { background: #2f837c; }
+.icon-blue { background: #5a8ab8; }
+.icon-sage { background: #82a382; }
+
+.app-card h3 {
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.app-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.app-card-action {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #2f837c;
+}
