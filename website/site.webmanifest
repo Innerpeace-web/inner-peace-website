@@ -1,0 +1,21 @@
+{
+  "name": "Inner Peace In-Home Nursing & Care",
+  "short_name": "Inner Peace",
+  "description": "Personalised in-home nursing, personal, social and dementia care across East Gippsland, Victoria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#14454a",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ]
+}

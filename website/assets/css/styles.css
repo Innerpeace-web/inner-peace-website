@@ -13,7 +13,7 @@
   --sage: #a7c4a0;          /* secondary accent */
   --sage-soft: #cfe0c9;
   --soft-blue: #bcd8e6;     /* supporting accent */
-  --teal: #2e8b8b;          /* PRIMARY accent / CTAs */
+  --teal: #277676;          /* PRIMARY accent / CTAs (WCAG AA compliant on white) */
   --teal-600: #246f6f;      /* CTA hover */
   --teal-700: #1d5a5c;
   --deep-teal: #14454a;     /* headings / strong emphasis */
@@ -338,3 +338,32 @@ body { padding-bottom: 60px; }
 /* Coming soon */
 .coming-soon { text-align: center; padding-block: var(--sp-8); }
 .coming-soon .badge { margin-bottom: var(--sp-4); }
+
+/* ---------- 18. Form submission states ---------- */
+.spinner {
+  display: inline-block; width: 16px; height: 16px;
+  border: 2.5px solid rgba(255,255,255,0.35);
+  border-top-color: #fff; border-radius: 50%;
+  animation: spin 0.6s linear infinite; vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.btn:disabled { opacity: 0.7; cursor: not-allowed; }
+.form-status { margin-top: var(--sp-3); }
+.form-status[hidden] { display: none; }
+
+/* ---------- 19. Accessibility: prefers-reduced-motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .card { transition: none; }
+  .card:hover { transform: none; }
+  .spinner { animation: none; }
+}
+
+/* ---------- 20. Accessibility: focus-visible enhancements ---------- */
+.card:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: var(--radius); }
+.option:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
+.footer-social a:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.callbar a:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+.nav-list a:focus-visible { background: var(--cream); color: var(--deep-teal); }
+.breadcrumbs a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+

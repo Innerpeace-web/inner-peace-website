@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inner Peace Vision — Website Review & Modernization Proposal</title>
+<meta name="description" content="Strategic website overhaul and modernization proposal prepared for Inner Peace In-Home Nursing & Care.">
+
+<!-- Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{
+  --bg:#EAF2F0;
+  --sheet:#FFFFFF;
+  --ink:#173A37;
+  --ink-soft:#36514E;
+  --muted:#6A807D;
+  --teal:#2E9488;
+  --teal-deep:#1C6F66;
+  --blue:#6BA6D8;
+  --blue-deep:#3E7CB1;
+  --sage:#8FB49A;
+  --sage-deep:#5F8A6B;
+  --line:#E1ECE9;
+  --tint:#F3F8F7;
+  --tint-blue:#EEF4FA;
+  --tint-sage:#EFF5F0;
+  --gold:#C2A36B;
+  --shadow:0 30px 80px -30px rgba(23,58,55,.28);
+  --shadow-sm:0 14px 34px -18px rgba(23,58,55,.30);
+  --radius:18px;
+  --radius-sm:13px;
+  --maxw:1180px;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:var(--body);
+  color:var(--ink-soft);
+  background:var(--bg);
+  line-height:1.65;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* faint ambient ripple behind the document sheet */
+body::before,body::after{
+  content:"";
+  position:fixed;
+  z-index:0;
+  border-radius:50%;
+  pointer-events:none;
+  background:
+    radial-gradient(circle, transparent 38%, rgba(46,148,136,.10) 39%, transparent 41%),
+    radial-gradient(circle, transparent 56%, rgba(143,180,154,.09) 57%, transparent 59%),
+    radial-gradient(circle, transparent 74%, rgba(107,166,216,.08) 75%, transparent 77%);
+}
+body::before{width:760px;height:760px;top:-220px;right:-260px;}
+body::after{width:620px;height:620px;bottom:-240px;left:-240px;}
+
+img{max-width:100%;display:block;}
+a{color:var(--teal-deep);text-decoration:none;}
+
+/* ---------- scroll progress ---------- */
+.progress{
+  position:fixed;top:0;left:0;height:3px;width:0%;
+  background:linear-gradient(90deg,var(--sage),var(--teal),var(--blue));
+  z-index:1000;transition:width .12s linear;
+}
+
+/* ---------- back to top ---------- */
+.totop{
+  position:fixed;right:22px;bottom:22px;z-index:900;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--teal-deep);color:#fff;border:none;cursor:pointer;
+  display:grid;place-items:center;font-size:15px;
+  box-shadow:var(--shadow-sm);opacity:0;transform:translateY(14px);
+  transition:opacity .3s ease, transform .3s ease, background .2s ease;
+}
+.totop.show{opacity:1;transform:translateY(0);}
+.totop:hover{background:var(--teal);}
+.totop:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+
+/* ---------- document sheet ---------- */
+.report{
+  position:relative;z-index:1;
+  max-width:var(--maxw);
+  margin:34px auto;
+  background:var(--sheet);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+/* ---------- shared section ---------- */
+.section{padding:clamp(46px,6.5vw,96px) clamp(22px,5vw,76px);position:relative;}
+.section--tint{background:var(--tint);}
+.section--blue{background:var(--tint-blue);}
+.section--sage{background:var(--tint-sage);}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--teal-deep);margin:0 0 16px;
+}
+.eyebrow .num{
+  font-family:var(--display);font-weight:600;font-size:.9rem;letter-spacing:0;
+  color:var(--sage-deep);
+}
+.eyebrow i{color:var(--teal);font-size:.85rem;}
+
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink);font-weight:600;line-height:1.12;margin:0;}
+.section h2{font-size:clamp(1.85rem,3.4vw,2.7rem);letter-spacing:-.01em;margin-bottom:14px;}
+.lead{font-size:clamp(1.02rem,1.5vw,1.16rem);color:var(--ink-soft);max-width:62ch;margin:0 0 8px;}
+p{margin:0 0 16px;}
+.section > .lead:last-child{margin-bottom:0;}
+
+.kicker-rule{height:3px;width:62px;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--sage));margin:22px 0 34px;}
+
+/* ---------- ripple divider ---------- */
+.divider{display:flex;justify-content:center;align-items:center;padding:6px 0;background:var(--sheet);}
+.divider svg{width:120px;height:34px;opacity:.9;}
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative;overflow:hidden;
+  padding:clamp(48px,7vw,96px) clamp(24px,5vw,80px);
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(107,166,216,.16), transparent 55%),
+    radial-gradient(120% 100% at 0% 100%, rgba(143,180,154,.20), transparent 52%),
+    linear-gradient(168deg,#FFFFFF 0%,#F4FAF8 48%,#EAF4F1 100%);
+  min-height:min(94vh,860px);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.cover-ripple{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.cover-ripple svg{position:absolute;}
+.cover-ripple .r1{top:-180px;right:-150px;width:560px;height:560px;color:var(--teal);opacity:.5;animation:breathe 9s ease-in-out infinite alternate;}
+.cover-ripple .r2{bottom:-150px;left:-120px;width:420px;height:420px;color:var(--sage);opacity:.55;animation:breathe 11s ease-in-out .6s infinite alternate;}
+@keyframes breathe{from{transform:scale(1);opacity:.32;}to{transform:scale(1.06);opacity:.6;}}
+
+.cover-top{display:flex;align-items:center;justify-content:space-between;gap:18px;position:relative;z-index:2;flex-wrap:wrap;}
+.brandmark{display:flex;align-items:center;gap:13px;}
+.brandmark .glyph{
+  width:46px;height:46px;border-radius:13px;flex:none;
+  background:linear-gradient(145deg,var(--teal),var(--teal-deep));
+  display:grid;place-items:center;color:#fff;font-size:19px;box-shadow:var(--shadow-sm);
+}
+.brandmark .bn{font-family:var(--display);font-weight:600;color:var(--ink);font-size:1.02rem;line-height:1.15;}
+.brandmark .bn small{display:block;font-family:var(--body);font-weight:600;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+.cover-tag{
+  font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--teal-deep);border:1px solid var(--line);background:rgba(255,255,255,.7);
+  padding:8px 15px;border-radius:100px;
+}
+
+.cover-center{position:relative;z-index:2;max-width:880px;margin:clamp(36px,6vw,60px) 0;}
+.cover-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--teal-deep);
+  margin-bottom:24px;
+}
+.cover-eyebrow span{width:30px;height:1px;background:var(--teal);display:inline-block;}
+.cover h1{
+  font-size:clamp(2.6rem,6.4vw,4.7rem);font-weight:600;letter-spacing:-.022em;color:var(--ink);
+  line-height:1.02;margin-bottom:22px;
+}
+.cover h1 em{font-style:italic;font-weight:500;color:var(--teal-deep);}
+.cover-sub{
+  font-family:var(--display);font-weight:400;font-style:italic;
+  font-size:clamp(1.15rem,2.3vw,1.6rem);color:var(--sage-deep);margin-bottom:26px;
+}
+.cover-intro{max-width:56ch;color:var(--ink-soft);font-size:1.05rem;}
+
+.cover-meta{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;
+}
+.cover-meta .cell{background:rgba(255,255,255,.86);padding:18px 20px;}
+.cover-meta .lab{font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+.cover-meta .val{font-family:var(--display);font-weight:600;color:var(--ink);font-size:1.05rem;line-height:1.2;}
+.cover-meta .val small{display:block;font-family:var(--body);font-weight:500;font-size:.78rem;color:var(--muted);margin-top:3px;}
+
+/* ---------- TABLE OF CONTENTS ---------- */
+.toc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;}
+.toc-item{
+  display:flex;align-items:baseline;gap:16px;
+  padding:17px 4px;border-bottom:1px solid var(--line);
+  transition:padding .2s ease, color .2s ease;
+}
+.toc-item:hover{padding-left:12px;}
+.toc-item .tnum{font-family:var(--display);font-weight:600;color:var(--sage-deep);font-size:1.05rem;min-width:34px;}
+.toc-item .ttitle{font-weight:600;color:var(--ink);flex:1;}
+.toc-item .tdesc{display:block;font-weight:400;font-size:.86rem;color:var(--muted);margin-top:2px;}
+.toc-item i{color:var(--teal);font-size:.8rem;opacity:0;transform:translateX(-6px);transition:.2s ease;}
+.toc-item:hover i{opacity:1;transform:translateX(0);}
+
+/* ---------- generic card grid ---------- */
+.grid{display:grid;gap:22px;}
+.g2{grid-template-columns:repeat(2,1fr);}
+.g3{grid-template-columns:repeat(3,1fr);}
+.g4{grid-template-columns:repeat(4,1fr);}
+
+.card{
+  background:var(--sheet);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:28px;position:relative;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm);border-color:#CFE2DE;}
+.icon-badge{
+  width:50px;height:50px;border-radius:13px;display:grid;place-items:center;
+  font-size:20px;margin-bottom:18px;color:#fff;background:linear-gradient(145deg,var(--teal),var(--teal-deep));
+}
+.icon-badge.b-blue{background:linear-gradient(145deg,var(--blue),var(--blue-deep));}
+.icon-badge.b-sage{background:linear-gradient(145deg,var(--sage),var(--sage-deep));}
+.icon-badge.b-soft{background:var(--tint);color:var(--teal-deep);border:1px solid var(--line);}
+.card h3{font-size:1.18rem;margin-bottom:9px;}
+.card h4{font-size:1.05rem;margin-bottom:7px;}
+.card p{font-size:.96rem;margin-bottom:0;color:var(--ink-soft);}
+.card .tag{
+  display:inline-flex;align-items:center;gap:7px;margin-top:16px;
+  font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--teal-deep);background:var(--tint);border:1px solid var(--line);
+  padding:6px 12px;border-radius:100px;
+}
+.card .tag i{font-size:.7rem;}
+
+/* opportunity card top accent */
+.opp{border-top:3px solid var(--teal);}
+.opp:nth-child(3n+2){border-top-color:var(--blue);}
+.opp:nth-child(3n+3){border-top-color:var(--sage-deep);}
+
+/* strengths list inside intro split */
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start;}
+.panel{
+  background:var(--sheet);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;box-shadow:var(--shadow-sm);
+}
+.panel.tinted{background:var(--tint);box-shadow:none;}
+.mini{display:flex;gap:15px;padding:15px 0;border-bottom:1px dashed var(--line);}
+.mini:last-child{border-bottom:none;padding-bottom:0;}
+.mini:first-child{padding-top:0;}
+.mini .mi{
+  width:38px;height:38px;border-radius:11px;flex:none;display:grid;place-items:center;
+  background:var(--tint);color:var(--teal-deep);font-size:15px;border:1px solid var(--line);
+}
+.mini h4{font-family:var(--body);font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:3px;}
+.mini p{font-size:.9rem;margin:0;color:var(--muted);}
+
+/* callout */
+.callout{
+  display:flex;gap:18px;align-items:flex-start;
+  background:linear-gradient(135deg,var(--tint),#FFFFFF);
+  border:1px solid var(--line);border-left:4px solid var(--teal);
+  border-radius:var(--radius-sm);padding:24px 26px;margin-top:34px;
+}
+.callout i{color:var(--teal-deep);font-size:22px;margin-top:3px;}
+.callout p{margin:0;color:var(--ink-soft);font-size:.98rem;}
+.callout strong{color:var(--ink);}
+
+/* ---------- SITEMAP ---------- */
+.sitemap{display:flex;flex-direction:column;align-items:center;gap:0;}
+.node{
+  display:inline-flex;align-items:center;gap:11px;
+  background:var(--sheet);border:1.5px solid var(--line);border-radius:12px;
+  padding:13px 22px;font-weight:700;color:var(--ink);box-shadow:var(--shadow-sm);
+  position:relative;z-index:2;
+}
+.node i{color:var(--teal);font-size:.95rem;}
+.node.root{background:linear-gradient(145deg,var(--teal-deep),var(--teal));color:#fff;border-color:transparent;font-size:1.1rem;padding:16px 30px;}
+.node.root i{color:#fff;}
+.connector{width:2px;height:30px;background:var(--line);}
+.tier{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:16px;
+  position:relative;padding-top:30px;width:100%;
+}
+.tier::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:var(--line);}
+.branch{display:flex;flex-direction:column;align-items:center;position:relative;}
+.branch::before{content:"";position:absolute;top:-30px;width:2px;height:30px;background:var(--line);}
+.branch .node{font-size:.94rem;padding:11px 18px;}
+.subtier{display:flex;flex-direction:column;gap:9px;margin-top:14px;padding-top:14px;position:relative;width:100%;}
+.subtier::before{content:"";position:absolute;top:0;left:50%;width:2px;height:14px;background:var(--sage);transform:translateX(-50%);}
+.subnode{
+  display:flex;align-items:center;gap:9px;justify-content:flex-start;
+  background:var(--tint-sage);border:1px solid #DCEBDF;border-radius:9px;
+  padding:9px 15px;font-size:.86rem;font-weight:600;color:var(--sage-deep);
+}
+.subnode i{font-size:.78rem;color:var(--sage-deep);}
+.legend{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:40px;font-size:.82rem;color:var(--muted);}
+.legend span{display:inline-flex;align-items:center;gap:8px;}
+.dot{width:11px;height:11px;border-radius:3px;display:inline-block;}
+
+/* ---------- WIREFRAMES ---------- */
+.browser{
+  border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;
+  box-shadow:var(--shadow-sm);background:var(--sheet);height:100%;
+}
+.browser-bar{display:flex;align-items:center;gap:7px;padding:11px 15px;background:var(--tint);border-bottom:1px solid var(--line);}
+.browser-bar i{width:10px;height:10px;border-radius:50%;background:#D6E2DF;}
+.browser-bar i:nth-child(2){background:#E2E9D9;}
+.browser-bar i:nth-child(3){background:#DDE7EE;}
+.browser-bar .url{margin-left:8px;font-size:.7rem;color:var(--muted);font-weight:600;letter-spacing:.04em;}
+.wf{padding:18px;display:flex;flex-direction:column;gap:11px;}
+.wf .bar{height:13px;border-radius:5px;background:#EEF3F2;}
+.wf .bar.dark{background:#DCE8E5;}
+.wf .bar.teal{background:linear-gradient(90deg,#CFE7E3,#E2F0ED);}
+.wf .w70{width:70%;}.wf .w50{width:50%;}.wf .w40{width:40%;}.wf .w85{width:85%;}.wf .w30{width:30%;}
+.wf .pill{height:30px;width:120px;border-radius:100px;background:linear-gradient(90deg,var(--teal),var(--teal-deep));}
+.wf .row{display:flex;gap:11px;}
+.wf .box{flex:1;height:62px;border-radius:8px;background:#EEF3F2;border:1px solid #E2ECEA;}
+.wf .img{height:86px;border-radius:8px;background:linear-gradient(135deg,#DDEBE8,#E9F2F0);display:grid;place-items:center;color:#9DBCB6;font-size:20px;}
+.wf .quote{height:46px;border-radius:8px;background:var(--tint-blue);border:1px solid #E2EAF2;}
+
+.wf-block{display:grid;grid-template-columns:1.15fr 1fr;gap:26px;align-items:center;}
+.wf-note h4{font-family:var(--body);font-weight:800;color:var(--ink);font-size:1.05rem;display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.wf-note h4 .s{font-family:var(--display);font-weight:600;color:var(--sage-deep);font-size:.95rem;}
+.wf-note .role{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:10px;display:block;}
+.wf-note p{font-size:.95rem;margin:0;color:var(--ink-soft);}
+.wf-stack{display:flex;flex-direction:column;gap:34px;}
+.wf-block:nth-child(even){grid-template-columns:1fr 1.15fr;}
+.wf-block:nth-child(even) .wf-frame{order:2;}
+
+/* ---------- STAFF PORTAL DASHBOARD ---------- */
+.dash{
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+  display:grid;grid-template-columns:230px 1fr;background:var(--sheet);
+}
+.dash-side{background:linear-gradient(180deg,#173A37,#13302E);color:#CFE0DC;padding:24px 20px;}
+.dash-side .logo{display:flex;align-items:center;gap:11px;margin-bottom:26px;}
+.dash-side .logo .g{width:36px;height:36px;border-radius:10px;background:linear-gradient(145deg,var(--teal),var(--sage-deep));display:grid;place-items:center;color:#fff;}
+.dash-side .logo b{color:#fff;font-family:var(--display);font-weight:600;font-size:.98rem;}
+.dash-side .navi{display:flex;flex-direction:column;gap:4px;}
+.dash-side .navi a{display:flex;align-items:center;gap:12px;padding:11px 13px;border-radius:9px;color:#B9D2CD;font-size:.88rem;font-weight:600;}
+.dash-side .navi a.active{background:rgba(143,180,154,.22);color:#fff;}
+.dash-side .navi a i{width:18px;text-align:center;color:var(--sage);}
+.dash-side .navi a.active i{color:#fff;}
+.dash-main{padding:26px;background:var(--tint);}
+.dash-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px;flex-wrap:wrap;}
+.dash-head h4{font-family:var(--display);font-weight:600;color:var(--ink);font-size:1.3rem;}
+.dash-head .who{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--muted);font-weight:600;}
+.dash-head .who .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(145deg,var(--blue),var(--blue-deep));color:#fff;display:grid;place-items:center;font-size:.8rem;}
+.dash-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
+.tile{
+  background:var(--sheet);border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px;
+  transition:transform .25s ease, box-shadow .25s ease;cursor:default;
+}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);}
+.tile .ti{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;color:#fff;font-size:17px;margin-bottom:14px;background:linear-gradient(145deg,var(--teal),var(--teal-deep));}
+.tile:nth-child(2) .ti{background:linear-gradient(145deg,var(--blue),var(--blue-deep));}
+.tile:nth-child(3) .ti{background:linear-gradient(145deg,var(--sage),var(--sage-deep));}
+.tile:nth-child(4) .ti{background:linear-gradient(145deg,var(--teal),var(--teal-deep));}
+.tile:nth-child(5) .ti{background:linear-gradient(145deg,var(--blue),var(--blue-deep));}
+.tile:nth-child(6) .ti{background:linear-gradient(145deg,var(--sage),var(--sage-deep));}
+.tile b{display:block;font-family:var(--body);font-weight:800;color:var(--ink);font-size:1rem;margin-bottom:4px;}
+.tile span{font-size:.84rem;color:var(--muted);}
+.tile .meta{display:block;margin-top:11px;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal-deep);}
+
+/* ---------- MOODBOARD ---------- */
+.mood{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;}
+.swatch-card{grid-column:span 5;background:var(--sheet);border:1px solid var(--line);border-radius:var(--radius-sm);padding:24px;}
+.swatches{display:flex;gap:0;border-radius:11px;overflow:hidden;border:1px solid var(--line);margin-bottom:16px;}
+.sw{flex:1;height:74px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:7px;font-size:.6rem;font-weight:700;color:rgba(255,255,255,.92);letter-spacing:.04em;}
+.sw.l{color:var(--ink);}
+.type-card{grid-column:span 7;background:var(--sheet);border:1px solid var(--line);border-radius:var(--radius-sm);padding:24px 26px;}
+.type-card .big{font-family:var(--display);font-weight:600;color:var(--ink);font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.05;letter-spacing:-.01em;}
+.type-card .big em{font-style:italic;color:var(--teal-deep);}
+.type-card .spec{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);}
+.type-card .spec b{color:var(--ink);font-weight:700;}
+.type-card .bodyspec{margin-top:14px;font-size:.92rem;color:var(--ink-soft);}
+.mood-tile{
+  grid-column:span 4;border-radius:var(--radius-sm);min-height:128px;padding:18px;
+  display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;
+  border:1px solid var(--line);
+}
+.mood-tile i{position:absolute;top:16px;right:16px;font-size:24px;opacity:.5;}
+.mood-tile b{font-size:.98rem;font-family:var(--body);font-weight:800;}
+.mood-tile span{font-size:.78rem;opacity:.92;}
+.mt-photo{background:linear-gradient(150deg,#3E7CB1,#2E9488);}
+.mt-warm{background:linear-gradient(150deg,#5F8A6B,#8FB49A);}
+.mt-soft{background:linear-gradient(150deg,#1C6F66,#2E9488);}
+.ui-card{grid-column:span 12;background:var(--tint);border:1px solid var(--line);border-radius:var(--radius-sm);padding:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;}
+.ui-card .demo-btn{background:var(--teal-deep);color:#fff;border:none;padding:13px 26px;border-radius:100px;font-weight:700;font-family:var(--body);font-size:.92rem;}
+.ui-card .demo-btn.ghost{background:transparent;color:var(--teal-deep);border:1.5px solid var(--teal);}
+.ui-card .demo-chip{background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:.78rem;font-weight:700;color:var(--teal-deep);display:inline-flex;gap:8px;align-items:center;}
+.ui-card .label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);width:100%;}
+
+/* ---------- ROADMAP ---------- */
+.road{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;}
+.road::before{content:"";position:absolute;top:30px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,var(--teal),var(--blue),var(--sage));}
+.phase{padding:0 16px;position:relative;}
+.phase .ring{
+  width:60px;height:60px;border-radius:50%;background:var(--sheet);border:2px solid var(--teal);
+  display:grid;place-items:center;font-family:var(--display);font-weight:600;color:var(--teal-deep);
+  font-size:1.2rem;margin:0 auto 22px;position:relative;z-index:2;box-shadow:0 0 0 6px var(--sheet);
+}
+.phase:nth-child(2) .ring{border-color:var(--blue-deep);color:var(--blue-deep);box-shadow:0 0 0 6px var(--sheet);}
+.phase:nth-child(3) .ring{border-color:var(--sage-deep);color:var(--sage-deep);box-shadow:0 0 0 6px var(--sheet);}
+.phase-card{background:var(--sheet);border:1px solid var(--line);border-radius:var(--radius-sm);padding:24px;box-shadow:var(--shadow-sm);height:100%;}
+.phase-card .ph{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);}
+.phase-card h3{font-size:1.16rem;margin:6px 0 4px;}
+.phase-card .dur{font-size:.8rem;color:var(--muted);font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:7px;}
+.phase-card ul{list-style:none;padding:0;margin:0;}
+.phase-card li{display:flex;align-items:flex-start;gap:11px;padding:9px 0;font-size:.93rem;color:var(--ink-soft);border-bottom:1px dashed var(--line);}
+.phase-card li:last-child{border-bottom:none;}
+.phase-card li i{color:var(--teal);font-size:.78rem;margin-top:5px;flex:none;}
+
+/* ---------- OUTCOMES ---------- */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:34px;}
+.metric{
+  background:linear-gradient(160deg,#FFFFFF,var(--tint));border:1px solid var(--line);
+  border-radius:var(--radius-sm);padding:26px 22px;text-align:center;
+}
+.metric .big{font-family:var(--display);font-weight:600;color:var(--teal-deep);font-size:clamp(2.2rem,4vw,3rem);line-height:1;letter-spacing:-.02em;}
+.metric .lab{font-size:.86rem;color:var(--ink-soft);margin-top:10px;font-weight:500;}
+.metric i{color:var(--sage-deep);font-size:1rem;margin-bottom:6px;display:block;}
+
+.outcome{display:flex;gap:16px;align-items:flex-start;padding:20px;background:var(--sheet);border:1px solid var(--line);border-radius:var(--radius-sm);transition:transform .25s ease, box-shadow .25s ease;}
+.outcome:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);}
+.outcome .oi{width:46px;height:46px;border-radius:12px;flex:none;display:grid;place-items:center;color:#fff;font-size:18px;background:linear-gradient(145deg,var(--teal),var(--teal-deep));}
+.outcome:nth-child(3n+2) .oi{background:linear-gradient(145deg,var(--blue),var(--blue-deep));}
+.outcome:nth-child(3n+3) .oi{background:linear-gradient(145deg,var(--sage),var(--sage-deep));}
+.outcome h4{font-family:var(--body);font-weight:800;color:var(--ink);font-size:1.02rem;margin-bottom:4px;}
+.outcome p{font-size:.9rem;margin:0;color:var(--muted);}
+.disclaimer{font-size:.78rem;color:var(--muted);margin-top:26px;font-style:italic;display:flex;gap:9px;align-items:flex-start;}
+.disclaimer i{color:var(--sage-deep);margin-top:3px;}
+
+/* ---------- CONCLUSION ---------- */
+.conclusion{
+  background:
+    radial-gradient(110% 120% at 100% 0%, rgba(107,166,216,.16), transparent 50%),
+    radial-gradient(120% 120% at 0% 100%, rgba(143,180,154,.20), transparent 50%),
+    linear-gradient(160deg,#143230,#1C6F66);
+  color:#E5F1EE;position:relative;overflow:hidden;
+}
+.conclusion .eyebrow{color:#A9D2CB;}
+.conclusion .eyebrow .num{color:#CFE7E2;}
+.conclusion .eyebrow i{color:#A9D2CB;}
+.conclusion h2{color:#fff;}
+.conclusion .lead{color:#CFE3DF;}
+.conc-body{max-width:64ch;}
+.conc-body p{color:#D3E5E1;}
+.conc-body strong{color:#fff;}
+.signoff{display:flex;align-items:center;gap:16px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.18);}
+.signoff .g{width:50px;height:50px;border-radius:13px;background:rgba(255,255,255,.12);display:grid;place-items:center;color:#fff;font-size:20px;}
+.signoff .sn b{display:block;color:#fff;font-family:var(--display);font-weight:600;font-size:1.05rem;}
+.signoff .sn span{font-size:.84rem;color:#A9D2CB;}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:100px;font-weight:700;font-size:.94rem;transition:transform .2s ease, background .2s ease;}
+.btn-primary{background:#fff;color:var(--teal-deep);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);}
+.btn-ghost:hover{background:rgba(255,255,255,.1);}
+
+/* ---------- FOOTER ---------- */
+.foot{background:#0F2A28;color:#8FACA7;padding:30px clamp(22px,5vw,76px);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;font-size:.84rem;}
+.foot .fb{display:flex;align-items:center;gap:11px;}
+.foot .fb .g{width:34px;height:34px;border-radius:9px;background:linear-gradient(145deg,var(--teal),var(--sage-deep));display:grid;place-items:center;color:#fff;font-size:14px;}
+.foot b{color:#CFE0DC;font-family:var(--display);font-weight:600;}
+.foot .links{display:flex;gap:20px;flex-wrap:wrap;}
+.foot a{color:#8FACA7;}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+.grid .card.reveal:nth-child(2),.grid .outcome.reveal:nth-child(2),.metrics .metric.reveal:nth-child(2),.dash-tiles .tile.reveal:nth-child(2){transition-delay:.08s;}
+.grid .card.reveal:nth-child(3),.grid .outcome.reveal:nth-child(3),.metrics .metric.reveal:nth-child(3),.dash-tiles .tile.reveal:nth-child(3){transition-delay:.16s;}
+.grid .card.reveal:nth-child(4),.grid .outcome.reveal:nth-child(4),.metrics .metric.reveal:nth-child(4),.dash-tiles .tile.reveal:nth-child(4){transition-delay:.24s;}
+.grid .card.reveal:nth-child(5),.dash-tiles .tile.reveal:nth-child(5){transition-delay:.32s;}
+.grid .card.reveal:nth-child(6),.dash-tiles .tile.reveal:nth-child(6){transition-delay:.4s;}
+
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px;}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .split{grid-template-columns:1fr;gap:30px;}
+  .cover-meta{grid-template-columns:repeat(2,1fr);}
+  .toc-grid{grid-template-columns:1fr;gap:0;}
+  .g4{grid-template-columns:repeat(2,1fr);}
+  .metrics{grid-template-columns:repeat(2,1fr);}
+  .dash{grid-template-columns:1fr;}
+  .dash-side{display:flex;flex-direction:column;}
+  .dash-side .navi{flex-flow:row wrap;}
+  .dash-side .navi a{flex:1 1 40%;}
+  .dash-tiles{grid-template-columns:repeat(2,1fr);}
+  .road{grid-template-columns:1fr;gap:30px;}
+  .road::before{display:none;}
+  .mood-tile{grid-column:span 6;}
+}
+@media (max-width:680px){
+  body{font-size:16px;}
+  .report{margin:14px;border-radius:14px;}
+  .g2,.g3,.g4{grid-template-columns:1fr;}
+  .metrics{grid-template-columns:1fr;}
+  .dash-tiles{grid-template-columns:1fr;}
+  .cover-meta{grid-template-columns:1fr;}
+  .wf-block,.wf-block:nth-child(even){grid-template-columns:1fr;}
+  .wf-block:nth-child(even) .wf-frame{order:0;}
+  .swatch-card,.type-card,.mood-tile,.ui-card{grid-column:span 12;}
+  .dash-side .navi a{flex:1 1 100%;}
+  .legend{gap:14px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{animation:none !important;}
+  .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
+  .card,.tile,.outcome,.toc-item{transition:none !important;}
+}
+
+@media print{
+  body{background:#fff;}
+  body::before,body::after{display:none;}
+  .progress,.totop{display:none !important;}
+  .report{box-shadow:none;margin:0;max-width:100%;border-radius:0;}
+  .reveal{opacity:1 !important;transform:none !important;}
+  .section,.cover,.conclusion{break-inside:avoid;}
+  .card,.phase,.tile,.outcome,.wf-block{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<main class="report">
+
+  <!-- ============ COVER ============ -->
+  <section class="cover">
+    <div class="cover-ripple" aria-hidden="true">
+      <svg class="r1" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+        <circle cx="100" cy="100" r="34" stroke-width="1.5" opacity=".9"/>
+        <circle cx="100" cy="100" r="58" stroke-width="1.2" opacity=".6"/>
+        <circle cx="100" cy="100" r="82" stroke-width="1" opacity=".4"/>
+        <circle cx="100" cy="100" r="6" fill="currentColor" stroke="none" opacity=".8"/>
+      </svg>
+      <svg class="r2" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+        <circle cx="100" cy="100" r="34" stroke-width="1.5" opacity=".9"/>
+        <circle cx="100" cy="100" r="58" stroke-width="1.2" opacity=".6"/>
+        <circle cx="100" cy="100" r="82" stroke-width="1" opacity=".4"/>
+        <circle cx="100" cy="100" r="6" fill="currentColor" stroke="none" opacity=".8"/>
+      </svg>
+    </div>
+
+    <div class="cover-top">
+      <div class="brandmark">
+        <div class="glyph"><i class="fa-solid fa-spa"></i></div>
+        <div class="bn">Inner Peace
+          <small>In-Home Nursing &amp; Care</small>
+        </div>
+      </div>
+      <div class="cover-tag">Confidential · Strategic Review</div>
+    </div>
+
+    <div class="cover-center">
+      <div class="cover-eyebrow"><span></span> Website Modernization Engagement</div>
+      <h1>Inner Peace Vision<br>Website Review &amp; <em>Modernization</em> Proposal</h1>
+      <div class="cover-sub">Strategic Website Overhaul Recommendations</div>
+      <p class="cover-intro">A complete review of the current site at innerpeace.vision, with a clear, phased plan to modernize the brand, sharpen the user experience, and add a dedicated secure portal for your care team.</p>
+    </div>
+
+    <div class="cover-meta">
+      <div class="cell">
+        <div class="lab">Prepared for</div>
+        <div class="val">Annette<small>Inner Peace In-Home Nursing &amp; Care</small></div>
+      </div>
+      <div class="cell">
+        <div class="lab">Prepared by</div>
+        <div class="val">Evan Martinez</div>
+      </div>
+      <div class="cell">
+        <div class="lab">Date</div>
+        <div class="val">June 15, 2026</div>
+      </div>
+      <div class="cell">
+        <div class="lab">Document</div>
+        <div class="val">Proposal v1.0<small>Strategic review &amp; roadmap</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABLE OF CONTENTS ============ -->
+  <section class="section section--tint" id="contents">
+    <div class="eyebrow"><i class="fa-solid fa-list-ul"></i> Contents</div>
+    <h2 class="reveal">What this document covers</h2>
+    <div class="kicker-rule reveal"></div>
+    <div class="toc-grid reveal">
+      <a class="toc-item" href="#summary"><span class="tnum">01</span><span class="ttitle">Executive Summary<span class="tdesc">The opportunity at a glance</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      <a class="toc-item" href="#strengths"><span class="tnum">02</span><span class="ttitle">Current Website Strengths<span class="tdesc">Foundations worth keeping</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      <a class="toc-item" href="#opportunities"><span class="tnum">03</span><span class="ttitle">Opportunities for Improvement<span class="tdesc">Six priority areas</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      <a class="toc-item" href="#structure"><span class="tnum">04</span><span class="ttitle">Recommended Website Structure<span class="tdesc">A clearer sitemap</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      <a class="toc-item" href="#homepage"><span class="tnum">05</span><span class="ttitle">Homepage Redesign Concept<span class="tdesc">Section-by-section wireframes</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      <a class="toc-item" href="#portal"><span class="tnum">06</span><span class="ttitle">Staff Portal Recommendation<span class="tdesc">A secure team hub</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      <a class="toc-item" href="#direction"><span class="tnum">07</span><span class="ttitle">Recommended Design Direction<span class="tdesc">Look, feel &amp; moodboard</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      <a class="toc-item" href="#roadmap"><span class="tnum">08</span><span class="ttitle">Project Roadmap<span class="tdesc">Three delivery phases</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      <a class="toc-item" href="#outcomes"><span class="tnum">09</span><span class="ttitle">Expected Outcomes<span class="tdesc">Business &amp; team benefits</span></span><i class="fa-solid fa-arrow-right"></i></a>
+      <a class="toc-item" href="#conclusion"><span class="tnum">10</span><span class="ttitle">Conclusion &amp; Next Step<span class="tdesc">The recommendation</span></span><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 120 34" fill="none" stroke="#9DC3BC"><circle cx="60" cy="17" r="5" stroke-width="1.4"/><circle cx="60" cy="17" r="12" stroke-width="1.1" opacity=".7"/><circle cx="60" cy="17" r="6" fill="#9DC3BC" stroke="none" opacity=".25"/><line x1="0" y1="17" x2="42" y2="17" stroke-width="1" opacity=".5"/><line x1="78" y1="17" x2="120" y2="17" stroke-width="1" opacity=".5"/></svg>
+  </div>
+
+  <!-- ============ 01 EXECUTIVE SUMMARY ============ -->
+  <section class="section" id="summary">
+    <div class="eyebrow"><span class="num">01</span> · Executive Summary</div>
+    <h2 class="reveal">A trusted local care business, ready for a website to match</h2>
+    <div class="kicker-rule reveal"></div>
+    <p class="lead reveal">Since 2022, Inner Peace In-Home Nursing &amp; Care has built a genuine, compassionate reputation across East Gippsland — Bairnsdale, Lakes Entrance, Paynesville, Bruthen and the surrounding towns. The current website communicates that care clearly, but its presentation, structure and staff tooling no longer reflect the quality of the service behind it. This proposal sets out a focused plan to close that gap.</p>
+
+    <div class="split" style="margin-top:38px;">
+      <div class="panel reveal">
+        <div class="eyebrow" style="margin-bottom:18px;"><i class="fa-solid fa-circle-check"></i> Where the site is strong today</div>
+        <div class="mini"><div class="mi"><i class="fa-solid fa-list-check"></i></div><div><h4>Clear, well-described services</h4><p>Personal, Nursing, Social and Dementia Care are each explained in plain, reassuring language.</p></div></div>
+        <div class="mini"><div class="mi"><i class="fa-solid fa-heart"></i></div><div><h4>A warm, human brand voice</h4><p>The tone is empathetic and local — exactly what families look for when choosing in-home care.</p></div></div>
+        <div class="mini"><div class="mi"><i class="fa-solid fa-quote-right"></i></div><div><h4>Authentic client testimonials</h4><p>Real reviews already speak to the impact on wellbeing and independence.</p></div></div>
+        <div class="mini"><div class="mi"><i class="fa-solid fa-shield-halved"></i></div><div><h4>Credible, trustworthy operator</h4><p>Qualified, insured carers and an established booking process show a serious, safe provider.</p></div></div>
+      </div>
+      <div class="panel tinted reveal">
+        <div class="eyebrow" style="margin-bottom:18px;color:var(--blue-deep);"><i class="fa-solid fa-arrow-trend-up"></i> Where there is room to grow</div>
+        <div class="mini"><div class="mi" style="color:var(--blue-deep);"><i class="fa-solid fa-wand-magic-sparkles"></i></div><div><h4>A dated visual presentation</h4><p>The template look and dense text blocks undersell a premium, caring service.</p></div></div>
+        <div class="mini"><div class="mi" style="color:var(--blue-deep);"><i class="fa-solid fa-diagram-project"></i></div><div><h4>An unfocused homepage &amp; navigation</h4><p>Visitors aren't guided to one clear next step, and service links follow inconsistent paths.</p></div></div>
+        <div class="mini"><div class="mi" style="color:var(--blue-deep);"><i class="fa-solid fa-user-lock"></i></div><div><h4>A limited staff login</h4><p>The existing login isn't yet a true resource hub for policies, training and forms.</p></div></div>
+        <div class="mini"><div class="mi" style="color:var(--blue-deep);"><i class="fa-solid fa-bullseye"></i></div><div><h4>Under-used conversion signals</h4><p>Insurance, qualifications and reviews exist but aren't placed where they build trust fastest.</p></div></div>
+      </div>
+    </div>
+
+    <div class="callout reveal">
+      <i class="fa-solid fa-lightbulb"></i>
+      <p><strong>Why a redesign matters here.</strong> Choosing in-home care is an emotional, high-trust decision — often made by an adult child researching on a phone, late at night. A modern, consistent, mobile-first website removes doubt and makes the next step obvious, which lifts enquiries. A dedicated staff portal does the same job internally: it centralises resources, speeds up onboarding, and supports compliance — freeing your team to focus on clients rather than chasing documents.</p>
+    </div>
+  </section>
+
+  <!-- ============ 02 STRENGTHS ============ -->
+  <section class="section section--sage" id="strengths">
+    <div class="eyebrow"><span class="num">02</span> · Current Strengths</div>
+    <h2 class="reveal">Strong foundations worth protecting</h2>
+    <div class="kicker-rule reveal"></div>
+    <p class="lead reveal">A redesign should build on what already works rather than start from scratch. These five strengths are assets — they will be carried forward, refined and given a more polished home in the new site.</p>
+
+    <div class="grid g3" style="margin-top:38px;">
+      <div class="card reveal">
+        <div class="icon-badge"><i class="fa-solid fa-list-check"></i></div>
+        <h3>Clear service explanations</h3>
+        <p>Each service — Personal, Nursing, Social and Dementia Care — is described simply and warmly, helping families quickly understand what support is available in the home.</p>
+        <span class="tag"><i class="fa-solid fa-check"></i> Retain &amp; refine copy</span>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge b-blue"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h3>Compassionate brand message</h3>
+        <p>The voice centres on dignity, independence and life's simple pleasures. This authentic, local tone is a genuine differentiator and will anchor the new design.</p>
+        <span class="tag"><i class="fa-solid fa-check"></i> Keep the voice</span>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge b-sage"><i class="fa-solid fa-star"></i></div>
+        <h3>Existing testimonials</h3>
+        <p>Real client reviews already describe improved wellbeing and the ability to stay living at home. These are powerful proof points to feature far more prominently.</p>
+        <span class="tag"><i class="fa-solid fa-check"></i> Elevate &amp; expand</span>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><i class="fa-solid fa-box-archive"></i></div>
+        <h3>Valuable content to retain</h3>
+        <p>Service pages, area-served pages, the intro video and recruitment material represent real effort and SEO value. They will be migrated, not discarded.</p>
+        <span class="tag"><i class="fa-solid fa-check"></i> Migrate content</span>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge b-blue"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Established credibility</h3>
+        <p>Cert III–qualified carers, CPR and First Aid certification, and full insurance cover (public liability, indemnity, work cover) signal a safe, professional operator.</p>
+        <span class="tag"><i class="fa-solid fa-check"></i> Surface trust signals</span>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge b-sage"><i class="fa-solid fa-location-dot"></i></div>
+        <h3>Local presence &amp; reach</h3>
+        <p>Dedicated pages for Bairnsdale, Lakes Entrance, Paynesville and more establish Inner Peace as the trusted, community-rooted choice for East Gippsland families.</p>
+        <span class="tag"><i class="fa-solid fa-check"></i> Strengthen local SEO</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 OPPORTUNITIES ============ -->
+  <section class="section" id="opportunities">
+    <div class="eyebrow"><span class="num">03</span> · Opportunities for Improvement</div>
+    <h2 class="reveal">Six priority areas to address</h2>
+    <div class="kicker-rule reveal"></div>
+    <p class="lead reveal">These are the highest-impact opportunities identified during the review. None reflect a failure of the current site — they are the natural next step for a business that has outgrown its original online presence.</p>
+
+    <div class="grid g3" style="margin-top:38px;">
+      <div class="card opp reveal">
+        <div class="icon-badge"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>Outdated visual design</h3>
+        <p>The current layout relies on a dated template aesthetic with heavy text blocks and small imagery. First impressions form in seconds, and the visuals currently undersell the warmth and quality of the care provided.</p>
+        <span class="tag"><i class="fa-solid fa-eye"></i> Impact: Brand perception</span>
+      </div>
+      <div class="card opp reveal">
+        <div class="icon-badge b-blue"><i class="fa-solid fa-table-columns"></i></div>
+        <h3>Weak homepage structure</h3>
+        <p>The homepage opens with a video and long paragraphs but no clear visual hierarchy or single primary action. Visitors aren't guided toward "book a consultation," so intent leaks away before they convert.</p>
+        <span class="tag"><i class="fa-solid fa-arrow-pointer"></i> Impact: Conversion</span>
+      </div>
+      <div class="card opp reveal">
+        <div class="icon-badge b-sage"><i class="fa-solid fa-sitemap"></i></div>
+        <h3>Navigation complexity</h3>
+        <p>Menus repeat and overlap, "Login" sits inside the public navigation, and services are reached through two different URL patterns. This makes the site harder to scan and weakens its structure for search engines.</p>
+        <span class="tag"><i class="fa-solid fa-compass"></i> Impact: Usability</span>
+      </div>
+      <div class="card opp reveal">
+        <div class="icon-badge"><i class="fa-solid fa-swatchbook"></i></div>
+        <h3>Branding inconsistencies</h3>
+        <p>Naming shifts between "Inner Peace Vision" and "In-Home Nursing &amp; Care," the footer still reads © 2023, and a broken company link points to an incomplete address. Small details like these quietly erode trust.</p>
+        <span class="tag"><i class="fa-solid fa-fingerprint"></i> Impact: Credibility</span>
+      </div>
+      <div class="card opp reveal">
+        <div class="icon-badge b-blue"><i class="fa-solid fa-user-lock"></i></div>
+        <h3>Staff portal limitations</h3>
+        <p>A staff login already exists, but it isn't yet a genuine resource centre. Policies, training, forms and announcements live in scattered places, making onboarding and day-to-day reference slower than they should be.</p>
+        <span class="tag"><i class="fa-solid fa-people-roof"></i> Impact: Operations</span>
+      </div>
+      <div class="card opp reveal">
+        <div class="icon-badge b-sage"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>Conversion optimisation</h3>
+        <p>Phone and booking options exist but aren't consistently visible, testimonials are tucked away, and trust signals are spread thin. Clear, repeated calls to action and visible proof will turn more visitors into enquiries.</p>
+        <span class="tag"><i class="fa-solid fa-chart-line"></i> Impact: Lead generation</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 120 34" fill="none" stroke="#9DC3BC"><circle cx="60" cy="17" r="5" stroke-width="1.4"/><circle cx="60" cy="17" r="12" stroke-width="1.1" opacity=".7"/><circle cx="60" cy="17" r="6" fill="#9DC3BC" stroke="none" opacity=".25"/><line x1="0" y1="17" x2="42" y2="17" stroke-width="1" opacity=".5"/><line x1="78" y1="17" x2="120" y2="17" stroke-width="1" opacity=".5"/></svg>
+  </div>
+
+  <!-- ============ 04 STRUCTURE ============ -->
+  <section class="section section--blue" id="structure">
+    <div class="eyebrow"><span class="num">04</span> · Recommended Structure</div>
+    <h2 class="reveal">A clearer, more intuitive sitemap</h2>
+    <div class="kicker-rule reveal"></div>
+    <p class="lead reveal">A simplified information architecture: one consistent path to every service, a dedicated home for resources, and a clean separation between the public website and the secure staff area.</p>
+
+    <div class="panel reveal" style="margin-top:38px;padding:clamp(26px,4vw,48px) 22px;background:var(--sheet);">
+      <div class="sitemap">
+        <div class="node root"><i class="fa-solid fa-house"></i> Home</div>
+        <div class="connector"></div>
+        <div class="tier">
+          <div class="branch"><div class="node"><i class="fa-solid fa-circle-info"></i> About Us</div></div>
+          <div class="branch">
+            <div class="node"><i class="fa-solid fa-hand-holding-heart"></i> Services</div>
+            <div class="subtier">
+              <div class="subnode"><i class="fa-solid fa-bath"></i> Personal Care</div>
+              <div class="subnode"><i class="fa-solid fa-user-nurse"></i> Nursing Care</div>
+              <div class="subnode"><i class="fa-solid fa-people-group"></i> Social Care</div>
+              <div class="subnode"><i class="fa-solid fa-brain"></i> Dementia Support</div>
+            </div>
+          </div>
+          <div class="branch"><div class="node"><i class="fa-solid fa-quote-right"></i> Testimonials</div></div>
+          <div class="branch"><div class="node"><i class="fa-solid fa-book-open"></i> Resources</div></div>
+          <div class="branch"><div class="node"><i class="fa-solid fa-envelope"></i> Contact</div></div>
+          <div class="branch"><div class="node" style="border-color:var(--teal);color:var(--teal-deep);"><i class="fa-solid fa-id-badge"></i> Staff Portal</div></div>
+        </div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:var(--teal-deep);"></span> Primary page</span>
+        <span><span class="dot" style="background:var(--sage);"></span> Service sub-page</span>
+        <span><span class="dot" style="background:var(--teal);"></span> Secure / login required</span>
+      </div>
+    </div>
+
+    <div class="callout reveal">
+      <i class="fa-solid fa-route"></i>
+      <p><strong>What changes.</strong> Every service now lives under a single, predictable <em>Services</em> path; <em>Resources</em> gives helpful content (and area-served pages) a clear home; and the <em>Staff Portal</em> is separated from public navigation so visitors are never distracted by an internal login. The result is a site that's easier for families to navigate and easier for search engines to read.</p>
+    </div>
+  </section>
+
+  <!-- ============ 05 HOMEPAGE CONCEPT ============ -->
+  <section class="section" id="homepage">
+    <div class="eyebrow"><span class="num">05</span> · Homepage Redesign Concept</div>
+    <h2 class="reveal">A homepage that guides, not just informs</h2>
+    <div class="kicker-rule reveal"></div>
+    <p class="lead reveal">The new homepage tells a clear story from top to bottom: who you are, what you offer, why you're trusted, proof, where you serve, and how to take the next step. Below is the recommended section order, with the purpose of each.</p>
+
+    <div class="wf-stack" style="margin-top:40px;">
+
+      <!-- Hero -->
+      <div class="wf-block reveal">
+        <div class="wf-frame">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span class="url">innerpeace.vision</span></div>
+            <div class="wf">
+              <div class="bar dark w30"></div>
+              <div class="bar teal w70" style="height:24px;"></div>
+              <div class="bar w50"></div>
+              <div class="row" style="margin-top:6px;"><div class="pill"></div><div class="pill" style="background:transparent;border:1.5px solid var(--teal);"></div></div>
+              <div class="img" style="height:96px;margin-top:8px;"><i class="fa-solid fa-image"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="wf-note">
+          <span class="role">Section 01</span>
+          <h4><span class="s">A.</span> Hero section</h4>
+          <p>A calm, full-width welcome with a confident headline, a single primary button — "Book a free care consultation" — and quiet trust cues ("Caring for East Gippsland since 2022"). The goal: a visitor understands what you do and how to act within five seconds.</p>
+        </div>
+      </div>
+
+      <!-- Services Overview -->
+      <div class="wf-block reveal">
+        <div class="wf-frame">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span class="url">Services overview</span></div>
+            <div class="wf">
+              <div class="bar dark w40" style="margin:0 auto;"></div>
+              <div class="row"><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div></div>
+              <div class="row"><div class="bar w85" style="margin:0 auto;"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="wf-note">
+          <span class="role">Section 02</span>
+          <h4><span class="s">B.</span> Services overview</h4>
+          <p>Four clean cards — Personal, Nursing, Social and Dementia Care — each with an icon, a one-line summary and a "Learn more" link. This lets every visitor self-select the support they need and routes them straight to the right service page.</p>
+        </div>
+      </div>
+
+      <!-- Why Choose Us -->
+      <div class="wf-block reveal">
+        <div class="wf-frame">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span class="url">Why choose us</span></div>
+            <div class="wf">
+              <div class="row" style="align-items:center;"><div class="img" style="flex:1;height:96px;"><i class="fa-solid fa-shield-heart"></i></div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:9px;"><div class="bar dark w70"></div><div class="bar w85"></div><div class="bar w50"></div><div class="bar w70"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wf-note">
+          <span class="role">Section 03</span>
+          <h4><span class="s">C.</span> Why choose us</h4>
+          <p>The trust section. Four pillars make credibility visible: qualified carers (Cert III, CPR &amp; First Aid), fully insured, personalised carer matching, and locally owned. This is where doubt is replaced with confidence.</p>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="wf-block reveal">
+        <div class="wf-frame">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span class="url">Testimonials</span></div>
+            <div class="wf">
+              <div class="bar dark w40" style="margin:0 auto;"></div>
+              <div class="row"><div class="quote"></div><div class="quote"></div></div>
+              <div class="row"><div class="quote"></div><div class="quote"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="wf-note">
+          <span class="role">Section 04</span>
+          <h4><span class="s">D.</span> Testimonials</h4>
+          <p>Your existing reviews, given room to breathe — "the social support outings have really helped … improved my physical and emotional wellbeing." Real words from real clients are the most persuasive content on the page.</p>
+        </div>
+      </div>
+
+      <!-- Service Area -->
+      <div class="wf-block reveal">
+        <div class="wf-frame">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span class="url">Service area</span></div>
+            <div class="wf">
+              <div class="row"><div style="flex:1;display:flex;flex-direction:column;gap:9px;"><div class="bar dark w70"></div><div class="bar w50"></div><div class="bar w85"></div></div>
+                <div class="img" style="flex:1;height:104px;"><i class="fa-solid fa-map-location-dot"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wf-note">
+          <span class="role">Section 05</span>
+          <h4><span class="s">E.</span> Service area</h4>
+          <p>A simple map and town list — Bairnsdale, Bruthen, Lakes Entrance, Lindenow South, Paynesville and surrounds — that instantly answers "do you cover me?" and reinforces Inner Peace as the local choice.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="wf-block reveal">
+        <div class="wf-frame">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span class="url">Call to action</span></div>
+            <div class="wf" style="background:linear-gradient(135deg,#EAF4F1,#F4FAF8);">
+              <div class="bar dark w50" style="margin:0 auto;height:18px;"></div>
+              <div class="bar w70" style="margin:0 auto;"></div>
+              <div class="row" style="justify-content:center;margin-top:6px;"><div class="pill"></div><div class="pill" style="background:transparent;border:1.5px solid var(--teal);"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="wf-note">
+          <span class="role">Section 06</span>
+          <h4><span class="s">F.</span> Call to action</h4>
+          <p>A warm closing band that makes the next step effortless: book a consultation, call 0419&nbsp;853&nbsp;811, or — for prospective carers — "Join our team." Every homepage scroll ends with a clear, friendly invitation to act.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 06 STAFF PORTAL ============ -->
+  <section class="section section--tint" id="portal">
+    <div class="eyebrow"><span class="num">06</span> · Staff Portal Recommendation</div>
+    <h2 class="reveal">A secure, central hub for your care team</h2>
+    <div class="kicker-rule reveal"></div>
+    <p class="lead reveal">Building on the login that already exists, we recommend a proper staff dashboard — a single, password-protected home for everything your carers and coordinators need. Here is the concept.</p>
+
+    <div class="dash reveal" style="margin-top:38px;">
+      <aside class="dash-side">
+        <div class="logo"><div class="g"><i class="fa-solid fa-spa"></i></div><b>Staff Portal</b></div>
+        <nav class="navi">
+          <a class="active"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+          <a><i class="fa-solid fa-file-shield"></i> Policies</a>
+          <a><i class="fa-solid fa-graduation-cap"></i> Training</a>
+          <a><i class="fa-solid fa-folder-open"></i> Documents</a>
+          <a><i class="fa-solid fa-file-lines"></i> Forms</a>
+          <a><i class="fa-solid fa-bullhorn"></i> Announcements</a>
+        </nav>
+      </aside>
+      <div class="dash-main">
+        <div class="dash-head">
+          <h4>Welcome back, team</h4>
+          <div class="who"><span>Carer view</span><div class="av">A</div></div>
+        </div>
+        <div class="dash-tiles">
+          <div class="tile reveal"><div class="ti"><i class="fa-solid fa-file-shield"></i></div><b>Policies &amp; Procedures</b><span>Care standards, safety, codes of conduct and compliance documents.</span><span class="meta">View library</span></div>
+          <div class="tile reveal"><div class="ti"><i class="fa-solid fa-graduation-cap"></i></div><b>Training Materials</b><span>Modules, guides and refreshers — CPR, First Aid, manual handling and more.</span><span class="meta">Start learning</span></div>
+          <div class="tile reveal"><div class="ti"><i class="fa-solid fa-folder-open"></i></div><b>Employee Documents</b><span>Contracts, rosters, payslips and personal records in one secure place.</span><span class="meta">Open files</span></div>
+          <div class="tile reveal"><div class="ti"><i class="fa-solid fa-file-lines"></i></div><b>Forms &amp; Templates</b><span>Incident reports, care notes, leave requests and reusable templates.</span><span class="meta">Download</span></div>
+          <div class="tile reveal"><div class="ti"><i class="fa-solid fa-bullhorn"></i></div><b>Staff Announcements</b><span>Company updates, shift news and important notices for the whole team.</span><span class="meta">Read latest</span></div>
+          <div class="tile reveal"><div class="ti"><i class="fa-solid fa-link"></i></div><b>Useful Links</b><span>Quick access to booking, the DISC profile tool and external resources.</span><span class="meta">Go to links</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g4" style="margin-top:34px;">
+      <div class="card reveal" style="padding:24px;">
+        <div class="icon-badge b-soft" style="margin-bottom:14px;"><i class="fa-solid fa-layer-group"></i></div>
+        <h4>Centralised resources</h4>
+        <p>One trusted source of truth — no more documents scattered across email, drives and folders.</p>
+      </div>
+      <div class="card reveal" style="padding:24px;">
+        <div class="icon-badge b-soft" style="margin-bottom:14px;"><i class="fa-solid fa-user-plus"></i></div>
+        <h4>Easier onboarding</h4>
+        <p>New carers find policies, training and forms on day one, getting up to speed faster.</p>
+      </div>
+      <div class="card reveal" style="padding:24px;">
+        <div class="icon-badge b-soft" style="margin-bottom:14px;"><i class="fa-solid fa-clipboard-check"></i></div>
+        <h4>Better compliance</h4>
+        <p>Current policies and signed forms stay organised and accessible, supporting audit readiness.</p>
+      </div>
+      <div class="card reveal" style="padding:24px;">
+        <div class="icon-badge b-soft" style="margin-bottom:14px;"><i class="fa-solid fa-comments"></i></div>
+        <h4>Improved communication</h4>
+        <p>Announcements reach the whole team in one place, reducing missed updates and confusion.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 120 34" fill="none" stroke="#9DC3BC"><circle cx="60" cy="17" r="5" stroke-width="1.4"/><circle cx="60" cy="17" r="12" stroke-width="1.1" opacity=".7"/><circle cx="60" cy="17" r="6" fill="#9DC3BC" stroke="none" opacity=".25"/><line x1="0" y1="17" x2="42" y2="17" stroke-width="1" opacity=".5"/><line x1="78" y1="17" x2="120" y2="17" stroke-width="1" opacity=".5"/></svg>
+  </div>
+
+  <!-- ============ 07 DESIGN DIRECTION ============ -->
+  <section class="section" id="direction">
+    <div class="eyebrow"><span class="num">07</span> · Recommended Design Direction</div>
+    <h2 class="reveal">A calm, modern, premium healthcare aesthetic</h2>
+    <div class="kicker-rule reveal"></div>
+    <p class="lead reveal">The visual direction should feel as reassuring as the care itself — soft, spacious and professional. Light, natural colour; generous whitespace; refined typography; and warm, candid imagery of real people and places.</p>
+
+    <div class="grid g3" style="margin-top:38px;">
+      <div class="card reveal"><div class="icon-badge"><i class="fa-solid fa-palette"></i></div><h4>Modern healthcare aesthetic</h4><p>Soft teal, gentle blue and sage greens on white — a palette that reads clean, clinical and caring without feeling cold.</p></div>
+      <div class="card reveal"><div class="icon-badge b-blue"><i class="fa-solid fa-wind"></i></div><h4>More whitespace</h4><p>Room around every element reduces overwhelm, improves readability, and signals a calm, considered, premium service.</p></div>
+      <div class="card reveal"><div class="icon-badge b-sage"><i class="fa-solid fa-font"></i></div><h4>Better typography</h4><p>A warm, editorial serif for headings paired with a clean, friendly sans for body — clear hierarchy, easy reading at any age.</p></div>
+      <div class="card reveal"><div class="icon-badge"><i class="fa-solid fa-camera-retro"></i></div><h4>Professional imagery</h4><p>Authentic, natural photography of carers, clients and East Gippsland — real warmth, never generic stock.</p></div>
+      <div class="card reveal"><div class="icon-badge b-blue"><i class="fa-solid fa-shield-heart"></i></div><h4>Improved trust signals</h4><p>Qualifications, insurance, reviews and local credentials surfaced clearly and consistently across the site.</p></div>
+      <div class="card reveal"><div class="icon-badge b-sage"><i class="fa-solid fa-mobile-screen-button"></i></div><h4>Better mobile experience</h4><p>Designed mobile-first, with tap-friendly buttons and a click-to-call number always within reach.</p></div>
+    </div>
+
+    <h3 class="reveal" style="margin-top:54px;font-size:1.4rem;display:flex;align-items:center;gap:12px;"><i class="fa-solid fa-image" style="color:var(--teal);font-size:1rem;"></i> Visual moodboard</h3>
+    <p class="reveal" style="color:var(--muted);max-width:60ch;margin-top:8px;">An indicative direction for colour, type, imagery and interface — to align on the look and feel before design begins.</p>
+
+    <div class="mood reveal" style="margin-top:26px;">
+      <div class="swatch-card">
+        <div class="eyebrow" style="margin-bottom:14px;"><i class="fa-solid fa-droplet"></i> Colour palette</div>
+        <div class="swatches">
+          <div class="sw l" style="background:#FFFFFF;border-right:1px solid var(--line);">White</div>
+          <div class="sw" style="background:#8FB49A;">Sage</div>
+          <div class="sw" style="background:#6BA6D8;">Soft blue</div>
+          <div class="sw" style="background:#2E9488;">Teal</div>
+          <div class="sw" style="background:#1C6F66;">Deep teal</div>
+        </div>
+        <p style="font-size:.86rem;color:var(--muted);margin:0;">Light and airy by default, with deeper teal reserved for headings and calls to action — confident, never clinical-cold.</p>
+      </div>
+
+      <div class="type-card">
+        <div class="eyebrow" style="margin-bottom:14px;"><i class="fa-solid fa-text-height"></i> Typography</div>
+        <div class="big">Personalised care, <em>in the comfort of home.</em></div>
+        <div class="bodyspec">Body copy is set in a clean humanist sans for warmth and effortless reading — comfortable for families of every age, on every device.</div>
+        <div class="spec">
+          <span><b>Headings</b> — Fraunces (serif)</span>
+          <span><b>Body &amp; UI</b> — Hanken Grotesk (sans)</span>
+          <span><b>Scale</b> — clear, generous</span>
+        </div>
+      </div>
+
+      <div class="mood-tile mt-photo"><i class="fa-solid fa-people-arrows"></i><b>Candid care</b><span>Real carers &amp; clients</span></div>
+      <div class="mood-tile mt-warm"><i class="fa-solid fa-mountain-sun"></i><b>Local &amp; natural</b><span>East Gippsland light</span></div>
+      <div class="mood-tile mt-soft"><i class="fa-solid fa-hand-holding-heart"></i><b>Gentle &amp; human</b><span>Soft, hopeful tone</span></div>
+
+      <div class="ui-card">
+        <span class="label">Interface elements</span>
+        <button class="demo-btn" type="button">Book a consultation</button>
+        <button class="demo-btn ghost" type="button">Our services</button>
+        <span class="demo-chip"><i class="fa-solid fa-phone"></i> 0419 853 811</span>
+        <span class="demo-chip"><i class="fa-solid fa-shield-halved"></i> Fully insured</span>
+        <span class="demo-chip"><i class="fa-solid fa-certificate"></i> Cert III qualified</span>
+        <span class="demo-chip"><i class="fa-solid fa-star"></i> Client-reviewed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 ROADMAP ============ -->
+  <section class="section section--sage" id="roadmap">
+    <div class="eyebrow"><span class="num">08</span> · Project Roadmap</div>
+    <h2 class="reveal">A clear, three-phase delivery plan</h2>
+    <div class="kicker-rule reveal"></div>
+    <p class="lead reveal">A structured path from concept to launch, with your review built in at every stage. Timeframes are indicative and confirmed once scope is agreed.</p>
+
+    <div class="road" style="margin-top:48px;">
+      <div class="phase reveal">
+        <div class="ring">1</div>
+        <div class="phase-card">
+          <span class="ph">Phase 1</span>
+          <h3>Design mockups</h3>
+        
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Homepage design</li>
+            <li><i class="fa-solid fa-check"></i> About page</li>
+            <li><i class="fa-solid fa-check"></i> Services page</li>
+            <li><i class="fa-solid fa-check"></i> Staff portal dashboard</li>
+            <li><i class="fa-solid fa-check"></i> Mobile designs</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase reveal">
+        <div class="ring">2</div>
+        <div class="phase-card">
+          <span class="ph">Phase 2</span>
+          <h3>Review &amp; refinement</h3>
+         
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Stakeholder review with Annette</li>
+            <li><i class="fa-solid fa-check"></i> Feedback collection</li>
+            <li><i class="fa-solid fa-check"></i> Design adjustments</li>
+            <li><i class="fa-solid fa-check"></i> Final sign-off on direction</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase reveal">
+        <div class="ring">3</div>
+        <div class="phase-card">
+          <span class="ph">Phase 3</span>
+          <h3>WordPress development</h3>
+        
+          <ul>
+            <li><i class="fa-solid fa-check"></i> ACF PRO implementation</li>
+            <li><i class="fa-solid fa-check"></i> Staff login functionality</li>
+            <li><i class="fa-solid fa-check"></i> Document management</li>
+            <li><i class="fa-solid fa-check"></i> Training resources</li>
+            <li><i class="fa-solid fa-check"></i> Responsive optimisation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout reveal">
+      <i class="fa-solid fa-screwdriver-wrench"></i>
+      <p><strong>Built on what you already have.</strong> The new site stays on WordPress with ACF PRO, so your team keeps a familiar, editable platform. Existing content, the booking flow and recruitment tools are migrated and improved — not rebuilt from zero — keeping cost and disruption low.</p>
+    </div>
+  </section>
+
+  <!-- ============ 09 OUTCOMES ============ -->
+  <section class="section" id="outcomes">
+    <div class="eyebrow"><span class="num">09</span> · Expected Outcomes</div>
+    <h2 class="reveal">What the overhaul delivers</h2>
+    <div class="kicker-rule reveal"></div>
+    <p class="lead reveal">A modern site and a dedicated staff portal pay off in two directions at once: more enquiries from families, and a smoother, better-supported team behind the scenes.</p>
+
+    <div class="metrics" style="margin-top:38px;">
+      <div class="metric reveal"><i class="fa-solid fa-arrow-trend-up"></i><div class="big">+40%</div><div class="lab">Target uplift in online care enquiries</div></div>
+      <div class="metric reveal"><i class="fa-solid fa-mobile-screen"></i><div class="big">2&times;</div><div class="lab">Projected engagement on mobile devices</div></div>
+      <div class="metric reveal"><i class="fa-solid fa-folder-tree"></i><div class="big">1</div><div class="lab">Secure hub for all staff resources</div></div>
+      <div class="metric reveal"><i class="fa-solid fa-gauge-high"></i><div class="big">100%</div><div class="lab">Mobile-responsive, modern foundation</div></div>
+    </div>
+
+    <div class="grid g3">
+      <div class="outcome reveal"><div class="oi"><i class="fa-solid fa-handshake-angle"></i></div><div><h4>Increased trust</h4><p>A polished, consistent brand and visible credentials reassure families at the moment of decision.</p></div></div>
+      <div class="outcome reveal"><div class="oi"><i class="fa-solid fa-face-smile"></i></div><div><h4>Improved user experience</h4><p>Simpler navigation and a guided homepage make information effortless to find on any device.</p></div></div>
+      <div class="outcome reveal"><div class="oi"><i class="fa-solid fa-chart-line"></i></div><div><h4>Higher engagement</h4><p>Clearer structure, stronger imagery and prominent reviews keep visitors exploring for longer.</p></div></div>
+      <div class="outcome reveal"><div class="oi"><i class="fa-solid fa-magnet"></i></div><div><h4>Better lead generation</h4><p>Consistent calls to action and click-to-call turn more visits into consultations and bookings.</p></div></div>
+      <div class="outcome reveal"><div class="oi"><i class="fa-solid fa-folder-open"></i></div><div><h4>Easier staff access</h4><p>Carers reach policies, training and forms in one secure place, saving time and reducing friction.</p></div></div>
+      <div class="outcome reveal"><div class="oi"><i class="fa-solid fa-award"></i></div><div><h4>Stronger brand presence</h4><p>A professional, modern presence that positions Inner Peace as East Gippsland's leading in-home care provider.</p></div></div>
+    </div>
+
+    <p class="disclaimer reveal"><i class="fa-solid fa-circle-info"></i> <span>Figures shown are illustrative targets based on typical results for comparable healthcare and care-provider redesigns. Actual outcomes depend on traffic, market and the final agreed scope — they are presented to indicate direction and potential, not as a guarantee.</span></p>
+  </section>
+
+  <!-- ============ 10 CONCLUSION ============ -->
+  <section class="section conclusion" id="conclusion">
+    <div class="eyebrow"><span class="num">10</span> · Conclusion</div>
+    <h2 class="reveal">A strong business, ready for a website to match</h2>
+    <div class="kicker-rule reveal" style="background:linear-gradient(90deg,#A9D2CB,#CFE7E2);"></div>
+    <div class="conc-body reveal">
+      <p class="lead">Inner Peace In-Home Nursing &amp; Care has already done the hardest part: it has earned genuine trust, delivered real care, and built a warm, credible reputation across East Gippsland.</p>
+      <p>The current website holds strong foundations — clear services, an authentic voice, real testimonials and valuable content. What it now needs is a presentation that lives up to the quality of the service behind it. A modern, mobile-first redesign will make the brand feel as caring and professional as the team itself, guide more families toward making an enquiry, and remove the small inconsistencies that quietly undermine confidence today.</p>
+      <p>Paired with a dedicated staff portal, the overhaul also strengthens the business from the inside — centralising resources, simplifying onboarding, supporting compliance, and keeping the whole team informed. <strong>The recommendation is clear: build on what already works, and give Inner Peace the modern, trusted online presence and team hub it deserves.</strong></p>
+    </div>
+
+    <div class="cta-row reveal">
+      <a href="#roadmap" class="btn btn-primary"><i class="fa-solid fa-pen-ruler"></i> Approve Phase 1 — begin design</a>
+      <a href="#contents" class="btn btn-ghost"><i class="fa-solid fa-arrow-up"></i> Back to contents</a>
+    </div>
+
+    <div class="signoff reveal">
+      <div class="g"><i class="fa-solid fa-spa"></i></div>
+      <div class="sn">
+        <b>Prepared for Annette · Inner Peace In-Home Nursing &amp; Care</b>
+        <span> Healthcare Web Strategy Consultant · June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <div class="fb"><div class="g"><i class="fa-solid fa-spa"></i></div><div>Inner Peace Vision — <b>Website Review &amp; Modernization Proposal</b></div></div>
+    <div class="links">
+      <span>Confidential</span>
+      <span>Proposal v1.0</span>
+      <span>innerpeace.vision</span>
+    </div>
+  </footer>
+
+</main>
+
+<button class="totop" id="totop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+(function(){
+  // scroll progress
+  var bar = document.getElementById('progress');
+  var totop = document.getElementById('totop');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var pct = max > 0 ? (h.scrollTop || document.body.scrollTop) / max * 100 : 0;
+    bar.style.width = pct + '%';
+    if((h.scrollTop || document.body.scrollTop) > 640){ totop.classList.add('show'); }
+    else { totop.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  totop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior: (window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto':'smooth')});
+  });
+
+  // reveal on scroll
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

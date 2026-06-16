@@ -20,6 +20,103 @@
   window.IP = window.IP || {};
   window.IP.track = track;
 
+  /* ---------- Formspree submission helper ----------
+     Posts form data to Formspree and manages loading / success / error states.
+     -------------------------------------------------
+     CONFIGURATION: Replace these placeholder IDs with your real Formspree
+     form IDs from https://formspree.io/forms — each form needs its own ID.
+     Format: https://formspree.io/f/{form_id}                              */
+  var FORMSPREE_ENDPOINTS = {
+    /* Form name attr  →  Formspree endpoint */
+    "booking":      "https://formspree.io/f/YOUR_BOOKING_FORM_ID",
+    "contact":      "https://formspree.io/f/YOUR_CONTACT_FORM_ID",
+    "careers-eoi":  "https://formspree.io/f/YOUR_CAREERS_EOI_FORM_ID"
+  };
+
+  /**
+   * Submit a form to Formspree with loading/success/error UI states.
+   * @param {HTMLFormElement} form - The form element to submit.
+   * @param {string} successMessage - Message shown on success.
+   * @param {function} [onSuccess] - Optional callback after success.
+   */
+  function submitToFormspree(form, successMessage, onSuccess) {
+    var formName = form.getAttribute("name") || "form";
+    var endpoint = FORMSPREE_ENDPOINTS[formName];
+    var statusEl = form.closest("[data-booking]")
+      ? form.closest("[data-booking]").querySelector(".form-status")
+      : form.querySelector(".form-status");
+    var submitBtn = form.querySelector('[type="submit"]');
+
+    if (!endpoint) {
+      console.warn("[Formspree] No endpoint configured for form:", formName);
+      return;
+    }
+
+    // --- Loading state ---
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.setAttribute("data-original-text", submitBtn.textContent);
+      submitBtn.innerHTML = '<span class="spinner" aria-hidden="true"></span> Sending…';
+    }
+    if (statusEl) { statusEl.hidden = true; }
+
+    // Collect all form data (including data outside the <form> for booking widget)
+    var data = new FormData(form);
+
+    // For booking widget: also collect radio + date/time from earlier panels
+    var widget = form.closest("[data-booking]");
+    if (widget) {
+      var allInputs = widget.querySelectorAll("input, select, textarea");
+      allInputs.forEach(function (input) {
+        if (input.type === "radio") {
+          if (input.checked) data.set(input.name, input.value);
+        } else if (input.name && input.value && !data.has(input.name)) {
+          data.set(input.name, input.value);
+        }
+      });
+    }
+
+    fetch(endpoint, {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    })
+    .then(function (response) {
+      if (response.ok) {
+        // --- Success state ---
+        track("form_submit_success", { form: formName });
+        if (statusEl) {
+          statusEl.setAttribute("data-state", "success");
+          statusEl.hidden = false;
+          statusEl.textContent = successMessage;
+        }
+        form.reset();
+        if (onSuccess) onSuccess();
+      } else {
+        return response.json().then(function (json) {
+          throw new Error(json.errors ? json.errors.map(function(e) { return e.message; }).join(", ") : "Submission failed");
+        });
+      }
+    })
+    .catch(function (err) {
+      // --- Error state ---
+      track("form_submit_error", { form: formName, error: err.message });
+      if (statusEl) {
+        statusEl.setAttribute("data-state", "error");
+        statusEl.hidden = false;
+        statusEl.textContent = "Sorry, something went wrong. Please try again or call 0419 853 811.";
+      }
+    })
+    .finally(function () {
+      // --- Restore button ---
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        var original = submitBtn.getAttribute("data-original-text");
+        if (original) submitBtn.textContent = original;
+      }
+    });
+  }
+
   /* ---------- Mobile navigation ---------- */
   function initNav() {
     var toggle = document.querySelector(".nav-toggle");
@@ -122,14 +219,14 @@
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         track("booking_submit", {});
-        var status = widget.querySelector(".form-status");
-        if (status) {
-          status.setAttribute("data-state", "success");
-          status.hidden = false;
-          status.textContent =
-            "Thank you — your consultation request has been received. Annette or the team will call you within 1 business day. For anything urgent, call 0419 853 811.";
-        }
-        panels.forEach(function (p) { p.hidden = true; });
+        submitToFormspree(
+          form,
+          "Thank you — your consultation request has been received. Annette or the team will call you within 1 business day. For anything urgent, call 0419 853 811.",
+          function () {
+            // Hide all panels on success
+            panels.forEach(function (p) { p.hidden = true; });
+          }
+        );
       });
     }
     show(0);
@@ -140,17 +237,11 @@
     document.querySelectorAll("form[data-ajax]").forEach(function (form) {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        var status = form.querySelector(".form-status");
         // Native validation first
         if (!form.checkValidity()) { form.reportValidity(); return; }
-        track("form_submit", { form: form.getAttribute("name") || "form" });
-        if (status) {
-          status.setAttribute("data-state", "success");
-          status.hidden = false;
-          status.textContent = form.getAttribute("data-success") ||
-            "Thank you — we’ve received your message and will be in touch shortly.";
-        }
-        form.reset();
+        var successMsg = form.getAttribute("data-success") ||
+          "Thank you — we've received your message and will be in touch shortly.";
+        submitToFormspree(form, successMsg);
       });
     });
   }

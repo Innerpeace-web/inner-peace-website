@@ -1,0 +1,339 @@
+Inner Peace Vision — Website Review & Modernization Proposal
+Inner Peace
+In-Home Nursing & Care
+Confidential · Strategic Review
+Website Modernization Engagement
+Inner Peace Vision
+Website Review &
+Modernization
+Proposal
+Strategic Website Overhaul Recommendations
+A complete review of the current site at innerpeace.vision, with a clear, phased plan to modernize the brand, sharpen the user experience, and add a dedicated secure portal for your care team.
+Prepared for
+Annette
+Inner Peace In-Home Nursing & Care
+Prepared by
+Evan Martinez
+Date
+June 15, 2026
+Document
+Proposal v1.0
+Strategic review & roadmap
+Contents
+What this document covers
+01
+Executive Summary
+The opportunity at a glance
+02
+Current Website Strengths
+Foundations worth keeping
+03
+Opportunities for Improvement
+Six priority areas
+04
+Recommended Website Structure
+A clearer sitemap
+05
+Homepage Redesign Concept
+Section-by-section wireframes
+06
+Staff Portal Recommendation
+A secure team hub
+07
+Recommended Design Direction
+Look, feel & moodboard
+08
+Project Roadmap
+Three delivery phases
+09
+Expected Outcomes
+Business & team benefits
+10
+Conclusion & Next Step
+The recommendation
+01
+· Executive Summary
+A trusted local care business, ready for a website to match
+Since 2022, Inner Peace In-Home Nursing & Care has built a genuine, compassionate reputation across East Gippsland — Bairnsdale, Lakes Entrance, Paynesville, Bruthen and the surrounding towns. The current website communicates that care clearly, but its presentation, structure and staff tooling no longer reflect the quality of the service behind it. This proposal sets out a focused plan to close that gap.
+Where the site is strong today
+Clear, well-described services
+Personal, Nursing, Social and Dementia Care are each explained in plain, reassuring language.
+A warm, human brand voice
+The tone is empathetic and local — exactly what families look for when choosing in-home care.
+Authentic client testimonials
+Real reviews already speak to the impact on wellbeing and independence.
+Credible, trustworthy operator
+Qualified, insured carers and an established booking process show a serious, safe provider.
+Where there is room to grow
+A dated visual presentation
+The template look and dense text blocks undersell a premium, caring service.
+An unfocused homepage & navigation
+Visitors aren't guided to one clear next step, and service links follow inconsistent paths.
+A limited staff login
+The existing login isn't yet a true resource hub for policies, training and forms.
+Under-used conversion signals
+Insurance, qualifications and reviews exist but aren't placed where they build trust fastest.
+Why a redesign matters here.
+Choosing in-home care is an emotional, high-trust decision — often made by an adult child researching on a phone, late at night. A modern, consistent, mobile-first website removes doubt and makes the next step obvious, which lifts enquiries. A dedicated staff portal does the same job internally: it centralises resources, speeds up onboarding, and supports compliance — freeing your team to focus on clients rather than chasing documents.
+02
+· Current Strengths
+Strong foundations worth protecting
+A redesign should build on what already works rather than start from scratch. These five strengths are assets — they will be carried forward, refined and given a more polished home in the new site.
+Clear service explanations
+Each service — Personal, Nursing, Social and Dementia Care — is described simply and warmly, helping families quickly understand what support is available in the home.
+Retain & refine copy
+Compassionate brand message
+The voice centres on dignity, independence and life's simple pleasures. This authentic, local tone is a genuine differentiator and will anchor the new design.
+Keep the voice
+Existing testimonials
+Real client reviews already describe improved wellbeing and the ability to stay living at home. These are powerful proof points to feature far more prominently.
+Elevate & expand
+Valuable content to retain
+Service pages, area-served pages, the intro video and recruitment material represent real effort and SEO value. They will be migrated, not discarded.
+Migrate content
+Established credibility
+Cert III–qualified carers, CPR and First Aid certification, and full insurance cover (public liability, indemnity, work cover) signal a safe, professional operator.
+Surface trust signals
+Local presence & reach
+Dedicated pages for Bairnsdale, Lakes Entrance, Paynesville and more establish Inner Peace as the trusted, community-rooted choice for East Gippsland families.
+Strengthen local SEO
+03
+· Opportunities for Improvement
+Six priority areas to address
+These are the highest-impact opportunities identified during the review. None reflect a failure of the current site — they are the natural next step for a business that has outgrown its original online presence.
+Outdated visual design
+The current layout relies on a dated template aesthetic with heavy text blocks and small imagery. First impressions form in seconds, and the visuals currently undersell the warmth and quality of the care provided.
+Impact: Brand perception
+Weak homepage structure
+The homepage opens with a video and long paragraphs but no clear visual hierarchy or single primary action. Visitors aren't guided toward "book a consultation," so intent leaks away before they convert.
+Impact: Conversion
+Navigation complexity
+Menus repeat and overlap, "Login" sits inside the public navigation, and services are reached through two different URL patterns. This makes the site harder to scan and weakens its structure for search engines.
+Impact: Usability
+Branding inconsistencies
+Naming shifts between "Inner Peace Vision" and "In-Home Nursing & Care," the footer still reads © 2023, and a broken company link points to an incomplete address. Small details like these quietly erode trust.
+Impact: Credibility
+Staff portal limitations
+A staff login already exists, but it isn't yet a genuine resource centre. Policies, training, forms and announcements live in scattered places, making onboarding and day-to-day reference slower than they should be.
+Impact: Operations
+Conversion optimisation
+Phone and booking options exist but aren't consistently visible, testimonials are tucked away, and trust signals are spread thin. Clear, repeated calls to action and visible proof will turn more visitors into enquiries.
+Impact: Lead generation
+04
+· Recommended Structure
+A clearer, more intuitive sitemap
+A simplified information architecture: one consistent path to every service, a dedicated home for resources, and a clean separation between the public website and the secure staff area.
+Home
+About Us
+Services
+Personal Care
+Nursing Care
+Social Care
+Dementia Support
+Testimonials
+Resources
+Contact
+Staff Portal
+Primary page
+Service sub-page
+Secure / login required
+What changes.
+Every service now lives under a single, predictable
+Services
+path;
+Resources
+gives helpful content (and area-served pages) a clear home; and the
+Staff Portal
+is separated from public navigation so visitors are never distracted by an internal login. The result is a site that's easier for families to navigate and easier for search engines to read.
+05
+· Homepage Redesign Concept
+A homepage that guides, not just informs
+The new homepage tells a clear story from top to bottom: who you are, what you offer, why you're trusted, proof, where you serve, and how to take the next step. Below is the recommended section order, with the purpose of each.
+innerpeace.vision
+Section 01
+A.
+Hero section
+A calm, full-width welcome with a confident headline, a single primary button — "Book a free care consultation" — and quiet trust cues ("Caring for East Gippsland since 2022"). The goal: a visitor understands what you do and how to act within five seconds.
+Services overview
+Section 02
+B.
+Services overview
+Four clean cards — Personal, Nursing, Social and Dementia Care — each with an icon, a one-line summary and a "Learn more" link. This lets every visitor self-select the support they need and routes them straight to the right service page.
+Why choose us
+Section 03
+C.
+Why choose us
+The trust section. Four pillars make credibility visible: qualified carers (Cert III, CPR & First Aid), fully insured, personalised carer matching, and locally owned. This is where doubt is replaced with confidence.
+Testimonials
+Section 04
+D.
+Testimonials
+Your existing reviews, given room to breathe — "the social support outings have really helped … improved my physical and emotional wellbeing." Real words from real clients are the most persuasive content on the page.
+Service area
+Section 05
+E.
+Service area
+A simple map and town list — Bairnsdale, Bruthen, Lakes Entrance, Lindenow South, Paynesville and surrounds — that instantly answers "do you cover me?" and reinforces Inner Peace as the local choice.
+Call to action
+Section 06
+F.
+Call to action
+A warm closing band that makes the next step effortless: book a consultation, call 0419 853 811, or — for prospective carers — "Join our team." Every homepage scroll ends with a clear, friendly invitation to act.
+06
+· Staff Portal Recommendation
+A secure, central hub for your care team
+Building on the login that already exists, we recommend a proper staff dashboard — a single, password-protected home for everything your carers and coordinators need. Here is the concept.
+Staff Portal
+Dashboard
+Policies
+Training
+Documents
+Forms
+Announcements
+Welcome back, team
+Carer view
+A
+Policies & Procedures
+Care standards, safety, codes of conduct and compliance documents.
+View library
+Training Materials
+Modules, guides and refreshers — CPR, First Aid, manual handling and more.
+Start learning
+Employee Documents
+Contracts, rosters, payslips and personal records in one secure place.
+Open files
+Forms & Templates
+Incident reports, care notes, leave requests and reusable templates.
+Download
+Staff Announcements
+Company updates, shift news and important notices for the whole team.
+Read latest
+Useful Links
+Quick access to booking, the DISC profile tool and external resources.
+Go to links
+Centralised resources
+One trusted source of truth — no more documents scattered across email, drives and folders.
+Easier onboarding
+New carers find policies, training and forms on day one, getting up to speed faster.
+Better compliance
+Current policies and signed forms stay organised and accessible, supporting audit readiness.
+Improved communication
+Announcements reach the whole team in one place, reducing missed updates and confusion.
+07
+· Recommended Design Direction
+A calm, modern, premium healthcare aesthetic
+The visual direction should feel as reassuring as the care itself — soft, spacious and professional. Light, natural colour; generous whitespace; refined typography; and warm, candid imagery of real people and places.
+Modern healthcare aesthetic
+Soft teal, gentle blue and sage greens on white — a palette that reads clean, clinical and caring without feeling cold.
+More whitespace
+Room around every element reduces overwhelm, improves readability, and signals a calm, considered, premium service.
+Better typography
+A warm, editorial serif for headings paired with a clean, friendly sans for body — clear hierarchy, easy reading at any age.
+Professional imagery
+Authentic, natural photography of carers, clients and East Gippsland — real warmth, never generic stock.
+Improved trust signals
+Qualifications, insurance, reviews and local credentials surfaced clearly and consistently across the site.
+Better mobile experience
+Designed mobile-first, with tap-friendly buttons and a click-to-call number always within reach.
+Visual moodboard
+An indicative direction for colour, type, imagery and interface — to align on the look and feel before design begins.
+Colour palette
+White
+Sage
+Soft blue
+Teal
+Deep teal
+Light and airy by default, with deeper teal reserved for headings and calls to action — confident, never clinical-cold.
+Typography
+Personalised care,
+in the comfort of home.
+Body copy is set in a clean humanist sans for warmth and effortless reading — comfortable for families of every age, on every device.
+Headings
+— Fraunces (serif)
+Body & UI
+— Hanken Grotesk (sans)
+Scale
+— clear, generous
+Candid care
+Real carers & clients
+Local & natural
+East Gippsland light
+Gentle & human
+Soft, hopeful tone
+Interface elements
+Book a consultation
+Our services
+0419 853 811
+Fully insured
+Cert III qualified
+Client-reviewed
+08
+· Project Roadmap
+A clear, three-phase delivery plan
+A structured path from concept to launch, with your review built in at every stage. Timeframes are indicative and confirmed once scope is agreed.
+1
+Phase 1
+Design mockups
+Homepage design
+About page
+Services page
+Staff portal dashboard
+Mobile designs
+2
+Phase 2
+Review & refinement
+Stakeholder review with Annette
+Feedback collection
+Design adjustments
+Final sign-off on direction
+3
+Phase 3
+WordPress development
+ACF PRO implementation
+Staff login functionality
+Document management
+Training resources
+Responsive optimisation
+Built on what you already have.
+The new site stays on WordPress with ACF PRO, so your team keeps a familiar, editable platform. Existing content, the booking flow and recruitment tools are migrated and improved — not rebuilt from zero — keeping cost and disruption low.
+09
+· Expected Outcomes
+What the overhaul delivers
+A modern site and a dedicated staff portal pay off in two directions at once: more enquiries from families, and a smoother, better-supported team behind the scenes.
++40%
+Target uplift in online care enquiries
+2×
+Projected engagement on mobile devices
+1
+Secure hub for all staff resources
+100%
+Mobile-responsive, modern foundation
+Increased trust
+A polished, consistent brand and visible credentials reassure families at the moment of decision.
+Improved user experience
+Simpler navigation and a guided homepage make information effortless to find on any device.
+Higher engagement
+Clearer structure, stronger imagery and prominent reviews keep visitors exploring for longer.
+Better lead generation
+Consistent calls to action and click-to-call turn more visits into consultations and bookings.
+Easier staff access
+Carers reach policies, training and forms in one secure place, saving time and reducing friction.
+Stronger brand presence
+A professional, modern presence that positions Inner Peace as East Gippsland's leading in-home care provider.
+Figures shown are illustrative targets based on typical results for comparable healthcare and care-provider redesigns. Actual outcomes depend on traffic, market and the final agreed scope — they are presented to indicate direction and potential, not as a guarantee.
+10
+· Conclusion
+A strong business, ready for a website to match
+Inner Peace In-Home Nursing & Care has already done the hardest part: it has earned genuine trust, delivered real care, and built a warm, credible reputation across East Gippsland.
+The current website holds strong foundations — clear services, an authentic voice, real testimonials and valuable content. What it now needs is a presentation that lives up to the quality of the service behind it. A modern, mobile-first redesign will make the brand feel as caring and professional as the team itself, guide more families toward making an enquiry, and remove the small inconsistencies that quietly undermine confidence today.
+Paired with a dedicated staff portal, the overhaul also strengthens the business from the inside — centralising resources, simplifying onboarding, supporting compliance, and keeping the whole team informed.
+The recommendation is clear: build on what already works, and give Inner Peace the modern, trusted online presence and team hub it deserves.
+Approve Phase 1 — begin design
+Back to contents
+Prepared for Annette · Inner Peace In-Home Nursing & Care
+Healthcare Web Strategy Consultant · June 2026
+Inner Peace Vision —
+Website Review & Modernization Proposal
+Confidential
+Proposal v1.0
+innerpeace.vision
