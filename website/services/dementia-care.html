@@ -94,6 +94,7 @@
           <ul class="submenu">
             <li><a href="../resources/area-served.html">Areas We Serve</a></li>
             <li><a href="../resources/benefits.html">Benefits of Home Care</a></li>
+            <li><a href="../resources/funding.html">Funding &amp; Support at Home</a></li>
             <li><a href="../careers.html">Join Our Team</a></li>
           </ul>
         </li>
@@ -229,7 +230,27 @@
         </p>
 
         <fieldset style="border:0;padding:0;margin:0;display:grid;gap:var(--sp-4)">
-          <legend class="eyebrow" style="margin-bottom:var(--sp-2)">Referrer details</legend>
+          <legend class="eyebrow" style="margin-bottom:var(--sp-2)">Referral details</legend>
+          <div class="field--row">
+            <div class="field">
+              <label for="provider-name">Provider / organisation name <span class="form-note" style="font-weight:400">(if applicable)</span></label>
+              <input id="provider-name" name="provider_name" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="sah-level">Support at Home (SaH) level</label>
+              <select id="sah-level" name="sah_level">
+                <option value="">Not sure / not applicable</option>
+                <option value="1">Level 1</option>
+                <option value="2">Level 2</option>
+                <option value="3">Level 3</option>
+                <option value="4">Level 4</option>
+                <option value="5">Level 5</option>
+                <option value="6">Level 6</option>
+                <option value="7">Level 7</option>
+                <option value="8">Level 8</option>
+              </select>
+            </div>
+          </div>
           <div class="field">
             <label for="ref-name">Referrer name <span class="req" aria-hidden="true">*</span></label>
             <input id="ref-name" name="referrer_name" type="text" autocomplete="name" required>
@@ -244,14 +265,41 @@
               <input id="ref-email" name="referrer_email" type="email" autocomplete="email" required>
             </div>
           </div>
+          <div class="field">
+            <label for="ref-relationship">Your relationship to the client</label>
+            <input id="ref-relationship" name="referrer_relationship" type="text" placeholder="e.g. GP, family member, care coordinator">
+          </div>
         </fieldset>
 
         <fieldset style="border:0;padding:0;margin:0;display:grid;gap:var(--sp-4)">
-          <legend class="eyebrow" style="margin-bottom:var(--sp-2)">Client details</legend>
+          <legend class="eyebrow" style="margin-bottom:var(--sp-2)">Client / patient details</legend>
           <div class="field--row">
             <div class="field">
-              <label for="client-name">Client name <span class="req" aria-hidden="true">*</span></label>
-              <input id="client-name" name="client_name" type="text" required>
+              <label for="client-title">Title</label>
+              <select id="client-title" name="client_title">
+                <option value="">Select…</option>
+                <option>Mr</option><option>Mrs</option><option>Ms</option><option>Miss</option><option>Mx</option><option>Dr</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="client-gender">Gender</label>
+              <input id="client-gender" name="client_gender" type="text">
+            </div>
+          </div>
+          <div class="field--row">
+            <div class="field">
+              <label for="client-given">Given name(s) <span class="req" aria-hidden="true">*</span></label>
+              <input id="client-given" name="client_given_names" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="client-surname">Surname <span class="req" aria-hidden="true">*</span></label>
+              <input id="client-surname" name="client_surname" type="text" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="field--row">
+            <div class="field">
+              <label for="client-dob">Date of birth</label>
+              <input id="client-dob" name="client_dob" type="date">
             </div>
             <div class="field">
               <label for="client-phone">Client phone</label>
@@ -259,14 +307,32 @@
             </div>
           </div>
           <div class="field">
-            <label for="sah-level">Support at Home (SaH) level</label>
-            <select id="sah-level" name="sah_level">
-              <option value="">Not sure / not applicable</option>
-              <option value="1">Level 1</option>
-              <option value="2">Level 2</option>
-              <option value="3">Level 3</option>
-              <option value="4">Level 4</option>
-            </select>
+            <label for="client-email">Client email</label>
+            <input id="client-email" name="client_email" type="email">
+          </div>
+          <div class="field">
+            <label for="client-address">Residential address</label>
+            <input id="client-address" name="client_address" type="text" autocomplete="street-address">
+          </div>
+          <fieldset class="field" style="border:0;padding:0;margin:0">
+            <legend>Aboriginal or Torres Strait Islander background</legend>
+            <label class="option"><input type="radio" name="atsi" value="Yes"><span>Yes</span></label>
+            <label class="option"><input type="radio" name="atsi" value="No"><span>No</span></label>
+            <label class="option"><input type="radio" name="atsi" value="Prefer not to say"><span>Prefer not to say</span></label>
+          </fieldset>
+          <div class="field--row">
+            <div class="field">
+              <label for="medicare-no">Medicare number</label>
+              <input id="medicare-no" name="medicare_number" type="text" inputmode="numeric" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="medicare-exp">Medicare expiry</label>
+              <input id="medicare-exp" name="medicare_expiry" type="text" placeholder="MM/YYYY">
+            </div>
+          </div>
+          <div class="field">
+            <label for="pension-dva">Pension / DVA number <span class="form-note" style="font-weight:400">(if applicable)</span></label>
+            <input id="pension-dva" name="pension_dva" type="text" autocomplete="off">
           </div>
         </fieldset>
 
@@ -275,10 +341,89 @@
           <textarea id="reason" name="reason" required placeholder="Briefly describe the support you’re seeking."></textarea>
         </div>
 
-        <label class="option">
-          <input type="checkbox" name="consent" value="yes" required>
-          <span><strong>Consent</strong><br>I confirm I have the client’s consent (or authority) to make this referral, and I consent to Inner Peace In-Home Nursing &amp; Care contacting the people named above to arrange dementia care support.</span>
-        </label>
+        <fieldset style="border:0;padding:0;margin:0;display:grid;gap:var(--sp-4)">
+          <legend class="eyebrow" style="margin-bottom:var(--sp-2)">Contacts &amp; care team</legend>
+          <div class="field--row">
+            <div class="field">
+              <label for="nok">Next of kin</label>
+              <input id="nok" name="next_of_kin" type="text">
+            </div>
+            <div class="field">
+              <label for="emergency">Emergency contact (name &amp; phone)</label>
+              <input id="emergency" name="emergency_contact" type="text">
+            </div>
+          </div>
+          <div class="field--row">
+            <div class="field">
+              <label for="decision-maker">Decision maker / POA</label>
+              <input id="decision-maker" name="decision_maker" type="text">
+            </div>
+            <div class="field">
+              <label for="gp">GP (name &amp; clinic)</label>
+              <input id="gp" name="gp" type="text">
+            </div>
+          </div>
+          <div class="field">
+            <label for="other-professionals">Other professionals involved</label>
+            <textarea id="other-professionals" name="other_professionals" placeholder="e.g. allied health, specialists, other providers"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset style="border:0;padding:0;margin:0;display:grid;gap:var(--sp-4)">
+          <legend class="eyebrow" style="margin-bottom:var(--sp-2)">Home visit risk assessment</legend>
+          <fieldset class="field" style="border:0;padding:0;margin:0">
+            <legend>Is the client agreeable to a home visit?</legend>
+            <label class="option"><input type="radio" name="home_visit_agreeable" value="Yes"><span>Yes</span></label>
+            <label class="option"><input type="radio" name="home_visit_agreeable" value="No"><span>No</span></label>
+            <label class="option"><input type="radio" name="home_visit_agreeable" value="Unsure"><span>Unsure</span></label>
+          </fieldset>
+          <div class="field--row">
+            <div class="field">
+              <label for="parking">Parking at the property</label>
+              <input id="parking" name="parking" type="text">
+            </div>
+            <div class="field">
+              <label for="pets">Pets on site</label>
+              <input id="pets" name="pets" type="text">
+            </div>
+          </div>
+          <div class="field--row">
+            <fieldset class="field" style="border:0;padding:0;margin:0">
+              <legend>Smoking in the home</legend>
+              <label class="option"><input type="radio" name="smoking" value="Yes"><span>Yes</span></label>
+              <label class="option"><input type="radio" name="smoking" value="No"><span>No</span></label>
+            </fieldset>
+            <fieldset class="field" style="border:0;padding:0;margin:0">
+              <legend>Firearms / weapons on site</legend>
+              <label class="option"><input type="radio" name="firearms" value="Yes"><span>Yes</span></label>
+              <label class="option"><input type="radio" name="firearms" value="No"><span>No</span></label>
+            </fieldset>
+          </div>
+          <div class="field">
+            <label for="infectious">Known infectious diseases or precautions</label>
+            <input id="infectious" name="infectious_diseases" type="text">
+          </div>
+          <div class="field">
+            <label for="risk-notes">Any other risks or access notes</label>
+            <textarea id="risk-notes" name="risk_notes"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset style="border:0;padding:0;margin:0;display:grid;gap:var(--sp-3)">
+          <legend class="eyebrow" style="margin-bottom:var(--sp-2)">Privacy &amp; consent</legend>
+          <label class="option">
+            <input type="checkbox" name="consent_referral" value="yes" required>
+            <span>I confirm I have the client’s consent (or legal authority) to make this referral on their behalf.</span>
+          </label>
+          <label class="option">
+            <input type="checkbox" name="consent_collect" value="yes" required>
+            <span>I consent to Inner Peace In-Home Nursing &amp; Care collecting and using the information above to assess and arrange dementia care support.</span>
+          </label>
+          <label class="option">
+            <input type="checkbox" name="consent_contact" value="yes" required>
+            <span>I consent to Inner Peace In-Home Nursing &amp; Care contacting the client, their care team and the people named above in relation to this referral.</span>
+          </label>
+        </fieldset>
 
         <p class="form-note">Your information is handled in line with our <a href="../legal/privacy.html">Privacy Policy</a>. We only use these details to respond to your referral and arrange care. Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
 
@@ -396,6 +541,7 @@
         <li><a href="../testimonials.html">Testimonials</a></li>
         <li><a href="../resources/area-served.html">Areas we serve</a></li>
         <li><a href="../resources/benefits.html">Benefits of home care</a></li>
+        <li><a href="../resources/funding.html">Funding &amp; Support at Home</a></li>
         <li><a href="../careers.html">Join our team</a></li>
       </ul>
     </div>

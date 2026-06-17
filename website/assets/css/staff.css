@@ -4,26 +4,24 @@
    ========================================================================== */
 
 body.app-body {
-  background: #eff3f2;
+  background: #fafcfb;
   margin: 0;
-  padding: 2rem;
+  padding: 0;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   font-family: var(--font-body);
 }
 
 .app-shell {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 280px 1fr;
   width: 100%;
-  max-width: 1300px;
-  height: 85vh;
-  min-height: 700px;
+  max-width: none;
+  height: 100vh;
+  min-height: 100vh;
   background: #fafcfb;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  border-radius: 0;
+  box-shadow: none;
   overflow: hidden;
 }
 
@@ -201,4 +199,103 @@ body.app-body {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #2f837c;
+}
+
+/* ==========================================================================
+   Staff portal — content components (shared across all interior pages)
+   ========================================================================== */
+.app-intro { font-size: var(--fs-400); color: var(--muted); max-width: 68ch; line-height: 1.65; margin: 0 0 var(--sp-6); }
+.app-section-title { font-family: var(--font-head); color: var(--deep-teal); font-size: 1.15rem; margin: 0 0 1rem; }
+.app-panel { background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 16px; padding: 1.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.02); margin-bottom: 1.5rem; }
+.app-panel > :first-child { margin-top: 0; }
+.app-panel > :last-child { margin-bottom: 0; }
+
+.app-list { list-style: none; margin: 0; padding: 0; }
+.app-list li { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.app-list li:first-child { padding-top: 0; }
+.app-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.app-list .doc-icon { width: 42px; height: 42px; border-radius: 11px; background: var(--cream); color: #2f837c; display: grid; place-items: center; flex: 0 0 auto; }
+.app-list .doc-meta { flex: 1 1 auto; min-width: 0; }
+.app-list .doc-meta strong { display: block; color: var(--ink); font-weight: 600; }
+.app-list .doc-meta span { font-size: var(--fs-200); color: var(--muted); }
+.app-list .doc-action { flex: 0 0 auto; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #2f837c; text-decoration: none; white-space: nowrap; }
+.app-list .doc-action:hover { text-decoration: underline; }
+
+.app-checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.85rem; }
+.app-checklist li { display: flex; gap: 0.85rem; padding: 1rem 1.1rem; border: 1px solid rgba(0,0,0,0.07); border-radius: 12px; background: #fff; }
+.app-checklist li.is-active { border-color: #2f837c; background: var(--cream); }
+.app-checklist input { width: 20px; height: 20px; margin-top: 2px; accent-color: #2f837c; flex: 0 0 auto; }
+.app-checklist strong { color: var(--deep-teal); }
+.app-checklist p { font-size: var(--fs-300); color: var(--muted); margin: 4px 0 0; line-height: 1.55; }
+
+.app-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.22rem 0.55rem; border-radius: 999px; flex: 0 0 auto; }
+.app-tag--done { background: #e3f0e6; color: #2f7a4a; }
+.app-tag--todo { background: #fdeede; color: #9a6a1f; }
+.app-tag--new  { background: #e2eef7; color: #2f6296; }
+
+.app-announce { border-left: 3px solid var(--sage); padding: 0.1rem 0 0.1rem 1.1rem; margin-bottom: 1.6rem; }
+.app-announce:last-child { margin-bottom: 0; }
+.app-announce time { font-size: var(--fs-200); color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.app-announce h3 { margin: 0.3rem 0 0.45rem; color: var(--deep-teal); font-size: 1.05rem; }
+.app-announce p { color: var(--muted); margin: 0; line-height: 1.6; }
+
+.app-prose h2 { font-family: var(--font-head); color: var(--deep-teal); font-size: 1.2rem; margin: 1.75rem 0 0.6rem; }
+.app-prose h2:first-child { margin-top: 0; }
+.app-prose p { color: var(--muted); line-height: 1.7; margin: 0 0 0.9rem; }
+.app-prose ul { color: var(--muted); line-height: 1.7; margin: 0 0 0.9rem 1.1rem; }
+.app-prose strong { color: var(--ink); }
+.app-meta-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.app-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: #2f837c; color: #fff; border-radius: 10px; padding: 0.7rem 1.1rem; font-weight: 600; font-size: 0.9rem; text-decoration: none; border: 0; cursor: pointer; }
+.app-btn:hover { background: #246f6f; }
+.app-btn--ghost { background: transparent; color: #2f837c; border: 1.5px solid #2f837c; }
+.app-btn--ghost:hover { background: var(--cream); }
+
+/* Sign-out pinned to the bottom of the sidebar */
+.app-signout { margin-top: auto; }
+.app-signout a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; padding: 0.5rem; }
+.app-signout a:hover { color: #fff; }
+
+/* ==========================================================================
+   Staff portal — login screen
+   ========================================================================== */
+body.app-login { background: linear-gradient(160deg, var(--deep-teal) 0%, #0f3336 100%); min-height: 100vh; margin: 0; display: grid; place-items: center; padding: var(--sp-5); font-family: var(--font-body); }
+.login-card { width: 100%; max-width: 420px; background: #fff; border-radius: 20px; box-shadow: 0 30px 70px -25px rgba(0,0,0,0.4); padding: 2.5rem; }
+.login-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 1.75rem; }
+.login-brand img { width: 44px; height: 44px; }
+.login-brand strong { font-family: var(--font-head); color: var(--deep-teal); font-size: 1.2rem; display: block; line-height: 1.1; }
+.login-brand small { color: var(--muted); font-size: 0.8rem; }
+.login-card h1 { font-family: var(--font-head); color: var(--ink); font-size: 1.5rem; margin: 0 0 0.4rem; }
+.login-card .login-sub { color: var(--muted); font-size: var(--fs-300); margin: 0 0 1.75rem; }
+.login-note { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: var(--fs-200); color: var(--muted); text-align: center; }
+.login-note a { color: #2f837c; }
+
+/* ==========================================================================
+   Staff portal — RESPONSIVE (tablet + mobile). The app shell previously had
+   none, so the fixed 260px sidebar and 3-col grid broke below desktop.
+   ========================================================================== */
+@media (min-width: 981px) and (max-width: 1200px) {
+  .app-grid { grid-template-columns: repeat(2, 1fr); }
+  .app-workspace { padding: 3rem; }
+}
+@media (max-width: 980px) {
+  body.app-body { padding: 0; display: block; min-height: 100vh; }
+  .app-shell { grid-template-columns: 1fr; height: auto; min-height: 100vh; max-width: none; border-radius: 0; box-shadow: none; overflow: visible; }
+  .app-sidebar { flex-direction: row; align-items: center; gap: 0.75rem; padding: 0.9rem 1.1rem; position: sticky; top: 0; z-index: 20; }
+  .app-brand { flex: 0 0 auto; font-size: 1.05rem; padding: 0; }
+  .app-sidebar nav { flex: 1 1 auto; min-width: 0; }
+  .app-nav { flex-direction: row; gap: 0.35rem; overflow-x: auto; padding-bottom: 0.2rem; -webkit-overflow-scrolling: touch; }
+  .app-nav a { white-space: nowrap; padding: 0.55rem 0.85rem; font-size: 0.9rem; }
+  .app-nav a svg { display: none; }
+  .app-signout { margin: 0; flex: 0 0 auto; }
+  .app-signout a span { display: none; }
+  .app-workspace { padding: 2rem 1.25rem 3rem; }
+  .app-header { margin-bottom: 2rem; }
+  .app-header h1 { font-size: var(--fs-600); }
+  .app-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
+@media (max-width: 560px) {
+  .app-header { flex-direction: column; align-items: flex-start; gap: 0.85rem; }
+  .app-list li { flex-wrap: wrap; }
+  .app-list .doc-action { margin-left: 56px; }
+  .login-card { padding: 1.75rem; }
 }

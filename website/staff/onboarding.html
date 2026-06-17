@@ -15,125 +15,138 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/staff.css">
 </head>
-<body style="background:var(--cream)">
+<body class="app-body">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<a class="skip-link" href="#main">Skip to content</a>
+<div class="app-shell">
 
-<!-- ===== Staff Header ===== -->
-<header class="site-header" style="background:var(--deep-teal);color:var(--white)">
-  <div class="container nav">
-    <a class="brand" href="dashboard.html" aria-label="Staff Portal Home" style="color:var(--white)">
-      <img src="https://innerpeace.vision/wp-content/uploads/2023/12/cropped-Logo-270x270.png" alt="" width="40" height="40">
-      <span style="color:var(--white)">Staff Portal<small style="color:var(--sage)">Inner Peace In-Home Care</small></span>
+  <aside class="app-sidebar">
+    <a href="dashboard.html" class="app-brand">
+      <div class="app-brand-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      Staff Portal
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu" style="filter:invert(1)">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-menu" id="nav-menu">
-      <ul class="nav-list" style="--ink:var(--white);">
-        <li><a href="dashboard.html" style="color:var(--white)">Dashboard</a></li>
-        <li><a href="policies.html" style="color:var(--white)">Policies</a></li>
-        <li><a href="training.html" style="color:var(--white)">Training</a></li>
-        <li><a href="resources.html" style="color:var(--white)">Resources</a></li>
-        <li class="has-sub">
-          <a href="#" style="color:var(--white)">More</a>
-          <ul class="submenu" style="background:var(--deep-teal)">
-            <li><a href="forms.html" style="color:var(--white)">Forms</a></li>
-            <li><a href="handbook.html" style="color:var(--white)">Handbook</a></li>
-            <li><a href="onboarding.html" style="color:var(--white)">Onboarding</a></li>
-          </ul>
+    <nav>
+      <ul class="app-nav">
+        <li>
+          <a href="dashboard.html" class="">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Dashboard
+          </a>
         </li>
-        <li><a href="support.html" style="color:var(--white)">Support</a></li>
+        <li>
+          <a href="policies.html" class="">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Policies
+          </a>
+        </li>
+        <li>
+          <a href="training.html" class="">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            Training
+          </a>
+        </li>
+        <li>
+          <a href="documents.html" class="">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            Documents
+          </a>
+        </li>
+        <li>
+          <a href="forms.html" class="">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1"></rect></svg>
+            Forms
+          </a>
+        </li>
+        <li>
+          <a href="announcements.html" class="">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            Announcements
+          </a>
+        </li>
+        <li>
+          <a href="resources.html" class="">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            Useful Links
+          </a>
+        </li>
+        <li>
+          <a href="onboarding.html" class="active">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Onboarding
+          </a>
+        </li>
+        <li>
+          <a href="handbook.html" class="">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            Handbook
+          </a>
+        </li>
+        <li>
+          <a href="support.html" class="">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            Support
+          </a>
+        </li>
       </ul>
-      <div class="nav-cta">
-        <a class="btn btn--primary" href="../index.html" style="background:var(--sage);color:var(--deep-teal)">Sign Out</a>
+    </nav>
+    <div class="app-signout">
+      <a href="../index.html">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        <span>Sign out</span>
+      </a>
+    </div>
+  </aside>
+
+  <main class="app-workspace">
+    <header class="app-header">
+      <h1>New Hire Onboarding</h1>
+      <div class="app-user">
+        Carer view
+        <div class="app-avatar">A</div>
       </div>
+    </header>
+
+    <p class="app-intro">Welcome to Inner Peace! To be fully compliant and confident before your first solo shift, please complete every item below.</p>
+    <div class="app-panel">
+      <h2 class="app-section-title">Your first week — onboarding checklist</h2>
+      <ul class="app-checklist">
+        <li class="">
+          <input type="checkbox" checked>
+          <div><strong>1. Signed Employment Contract</strong><p>Returned to Admin via email.</p></div>
+        </li>
+        <li class="">
+          <input type="checkbox" checked>
+          <div><strong>2. Banking &amp; Superannuation Details</strong><p>Uploaded to your Xero Me profile.</p></div>
+        </li>
+        <li class="is-active">
+          <input type="checkbox" >
+          <div><strong>3. Compliance Uploads</strong><p>Upload your NDIS Worker Screening Check, National Police Check, and AHPRA Registration (if RN).</p><p style="margin-top:8px"><a class="app-btn" href="documents.html">Upload documents</a></p></div>
+        </li>
+        <li class="">
+          <input type="checkbox" >
+          <div><strong>4. Mandatory Training Modules</strong><p>Complete Infection Control and Manual Handling in the Training hub.</p></div>
+        </li>
+        <li class="">
+          <input type="checkbox" >
+          <div><strong>5. Shadow Shift with Senior RN</strong><p>You will accompany Annette to three client visits.</p></div>
+        </li>
+      </ul>
     </div>
-  </div>
-</header>
-
-<main id="main">
-
-  <section class="page-banner" style="background:var(--teal);padding-block:var(--sp-9) var(--sp-8)">
-    <div class="container center stack reveal">
-      <h1 style="color:var(--white)">Welcome to the Team</h1>
+    <div class="app-panel" style="background:var(--deep-teal);color:#fff;border:0">
+      <h2 class="app-section-title" style="color:#fff">Next steps</h2>
+      <p style="color:rgba(255,255,255,0.85);line-height:1.7;margin:0 0 0.8rem">Once your compliance documents are verified, you'll receive your ShiftCare login and your initial roster.</p>
+      <p style="color:rgba(255,255,255,0.85);line-height:1.7;margin:0">Don't forget to stop by the Bairnsdale office to collect your PPE kit, name badge and uniform.</p>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="container" style="max-width: 1000px;">
+  </main>
 
-      <div class="grid grid--2-up">
-        <div class="stack reveal">
-          <p class="eyebrow">Your First Week</p>
-          <h2 style="font-size: var(--fs-700);">Onboarding Checklist</h2>
-          <p>We are thrilled to have you join Inner Peace. To ensure you are fully compliant and confident before your first solo shift, please complete all items below.</p>
-          
-          <ul class="feature-list" style="margin-top: var(--sp-4);">
-            <li style="padding: var(--sp-3); border: 1px solid var(--line); border-radius: 12px; background: var(--white);">
-              <input type="checkbox" checked style="width: 20px; height: 20px; margin-top: 2px;"> 
-              <div>
-                <strong style="color: var(--deep-teal);">1. Signed Employment Contract</strong>
-                <p style="font-size: var(--fs-300); color: var(--muted); margin-top: 4px;">Returned to Admin via email.</p>
-              </div>
-            </li>
-            <li style="padding: var(--sp-3); border: 1px solid var(--line); border-radius: 12px; background: var(--white);">
-              <input type="checkbox" checked style="width: 20px; height: 20px; margin-top: 2px;"> 
-              <div>
-                <strong style="color: var(--deep-teal);">2. Banking & Superannuation Details</strong>
-                <p style="font-size: var(--fs-300); color: var(--muted); margin-top: 4px;">Uploaded to Xero Me profile.</p>
-              </div>
-            </li>
-            <li style="padding: var(--sp-3); border: 1px solid var(--teal); border-radius: 12px; background: var(--cream);">
-              <input type="checkbox" style="width: 20px; height: 20px; margin-top: 2px;"> 
-              <div>
-                <strong style="color: var(--teal);">3. Compliance Uploads</strong>
-                <p style="font-size: var(--fs-300); color: var(--ink); margin-top: 4px;">Please upload your NDIS Worker Screening Check, National Police Check, and AHPRA Registration (if RN) to the portal.</p>
-                <button class="btn btn--primary" style="margin-top: 8px; padding: 0.6rem 1rem; min-height: auto; font-size: var(--fs-300);">Upload Documents</button>
-              </div>
-            </li>
-            <li style="padding: var(--sp-3); border: 1px solid var(--line); border-radius: 12px; background: var(--white);">
-              <input type="checkbox" style="width: 20px; height: 20px; margin-top: 2px;"> 
-              <div>
-                <strong style="color: var(--deep-teal);">4. Mandatory Training Modules</strong>
-                <p style="font-size: var(--fs-300); color: var(--muted); margin-top: 4px;">Complete Infection Control and Manual Handling in the Training Hub.</p>
-              </div>
-            </li>
-            <li style="padding: var(--sp-3); border: 1px solid var(--line); border-radius: 12px; background: var(--white);">
-              <input type="checkbox" style="width: 20px; height: 20px; margin-top: 2px;"> 
-              <div>
-                <strong style="color: var(--deep-teal);">5. Shadow Shift with Senior RN</strong>
-                <p style="font-size: var(--fs-300); color: var(--muted); margin-top: 4px;">Scheduled for Thursday. You will accompany Annette to 3 client visits.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="reveal" style="display: flex; align-items: center; justify-content: center;">
-          <div class="card" style="padding: var(--sp-6); text-align: center; background: var(--deep-teal); color: #fff;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" style="margin: 0 auto var(--sp-4);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-            <h3 style="color: #fff; font-size: var(--fs-600);">Next Steps</h3>
-            <p style="color: rgba(255,255,255,0.8); margin-top: var(--sp-3); font-size: var(--fs-400);">Once your compliance documents are verified, you will receive your ShiftCare login and your initial roster.</p>
-            <p style="color: rgba(255,255,255,0.8); margin-top: var(--sp-3); font-size: var(--fs-400);">Don't forget to stop by the Bairnsdale office to pick up your PPE kit, name badge, and uniform!</p>
-          </div>
-        </div>
-      </div>
+</div>
 
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer" style="padding-block:var(--sp-6) var(--sp-4);background:var(--white);border-top:1px solid var(--line);text-align:center">
-  <div class="container">
-    <p style="color:var(--muted);font-size:var(--fs-200)">Inner Peace Staff Portal Prototype &copy; 2026. This is a static demonstration.</p>
-  </div>
-</footer>
-
-<script src="../assets/js/main.js" defer></script>
 </body>
 </html>

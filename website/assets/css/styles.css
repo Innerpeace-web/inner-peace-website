@@ -408,3 +408,23 @@ body { padding-bottom: 60px; }
 .nav-list a:focus-visible { background: var(--cream); color: var(--deep-teal); }
 .breadcrumbs a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
 
+
+/* Legends used as field labels (radio/checkbox groups) match .field label */
+.field legend { font-weight: 700; font-size: var(--fs-300); color: var(--deep-teal); padding: 0; margin-bottom: 0.5rem; }
+
+/* ---------- Fixes: pill markers, radio/checkbox sizing, option groups ---------- */
+/* Pills were showing default <ul> disc markers — match every other list component */
+.pill-row { list-style: none; margin: 0; padding: 0; }
+
+/* Radio & checkbox inputs must NOT inherit the full-width text-field styling
+   (the .field input rule was stretching them into full-width bordered boxes) */
+.field input[type="radio"], .field input[type="checkbox"],
+.option input[type="radio"], .option input[type="checkbox"] {
+  width: auto; min-width: 0; padding: 0; border: 0; border-radius: 0;
+  background: transparent; box-shadow: none; flex: 0 0 auto; accent-color: var(--teal);
+}
+
+/* Radio/checkbox option groups: tidy responsive 2-column grid, legend spans full width */
+.field:has(> .option) { display: grid; gap: 0.6rem; }
+.field:has(> .option) > legend { grid-column: 1 / -1; }
+@media (min-width: 560px) { .field:has(> .option) { grid-template-columns: 1fr 1fr; } }

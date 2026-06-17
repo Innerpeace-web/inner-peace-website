@@ -14,6 +14,7 @@
   <url><loc>https://innerpeace.vision/resources/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://innerpeace.vision/resources/area-served.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://innerpeace.vision/resources/benefits.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://innerpeace.vision/resources/funding.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://innerpeace.vision/careers.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://innerpeace.vision/book.html</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
   <url><loc>https://innerpeace.vision/contact.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
